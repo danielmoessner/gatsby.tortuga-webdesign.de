@@ -3,4 +3,5 @@ siteUrl: gatsby-netlifycms.tortuga-webdesign.de
 siteDescription: Ein einfacher Demo Blog um die von Tortuga Webdesign
   verwendeten Technologien zu demonstrieren.
 socialMediaCard2: /content/media/boot.jpg
+socialMediaCard: /content/media/boot.jpg
 googleTrackingId: ""
