@@ -1,43 +1,25 @@
-# See https://github.com/netlify/netlify-cms/blob/master/example/config.yml
+# See https://www.netlifycms.org/docs/configuration-options/#backend
 backend:
   name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  branch: main
 
 # See https://www.netlifycms.org/docs/configuration-options/#locale
 locale: de
 
-# This url will display in the top-right of the CMS
+# See https://www.netlifycms.org/docs/configuration-options/#display-url
 display_url: https://gatsby-netlifycms.tortuga-webdesign.de 
 
-media_folder: content/media
-# media_library:
-#   name: uploadcare
-#   config:
-#     publicKey: a73a170cb5cdef662983
-#     multiple: false
-#     tabs: 'file camera url'
-#     effects: 'crop,rotate,enhance,grayscale'
-#     imageShrink: '2000x2000'
-#     previewStep: true
-#     clearable: true
-#     locale: de
-#     UPLOADCARE_LOCALE: 'de'
-#     LOCALE_TRANSLATIONS:
-#       buttons:
-#         cancel: 'C'
-#         remove: 'R'
-#         choose:
-#           files:
-#             one: 'O01'
-#             other: 'O02'
-#           images:
-#             one: 'O11'
-#             other: 'O12'
+# See https://www.netlifycms.org/docs/configuration-options/#site-url
+site_url: https://gatsby-netlifycms.tortuga-webdesign.de 
 
-collections: # A list of collections the CMS should be able to edit
+# See https://www.netlifycms.org/docs/configuration-options/#media-folder
+media_folder: content/media
+
+# See https://www.netlifycms.org/docs/collection-types/
+collections:
   - name: 'pages'
     label: Seite
-    delete: false # Prevent users from deleting documents in this collection
+    delete: false
     editor:
       preview: true
     files:
@@ -202,14 +184,14 @@ collections: # A list of collections the CMS should be able to edit
                   required: false,
                 }
 
-  - name: posts
-    label: Artikel
+  - name: animals
+    label: Wildtier
     editor:
       preview: true
-    folder: content/posts
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
+    folder: content/animals
+    slug: '{{slug}}'
+    create: true
+    fields:
       - { label: Template, name: template, widget: hidden, default: SinglePost }
       - { label: Title, name: title, widget: string }
       - label: 'Status'
@@ -257,23 +239,15 @@ collections: # A list of collections the CMS should be able to edit
             }
           - { label: Noindex, name: noindex, widget: boolean, required: false }
 
-  - name: postCategories
+  - name: categories
     label: Kategorie
     editor:
       preview: false
-    folder: content/postCategories
+    folder: content/categories
     slug: '{{slug}}'
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - { label: Template, name: template, widget: hidden, default: BlogIndex }
+    create: true
+    fields:
       - { label: Title, name: title, widget: string }
-      - { label: Subtitle, name: subtitle, widget: string, required: false }
-      - {
-          label: Featured Image,
-          name: featuredImage,
-          widget: image,
-          required: false,
-        }
       - label: 'Meta'
         required: false
         name: 'meta'
@@ -286,17 +260,10 @@ collections: # A list of collections the CMS should be able to edit
               widget: text,
               required: false,
             }
-          - {
-              label: Canonical Link,
-              name: canonicalLink,
-              widget: string,
-              required: false,
-            }
-          - { label: Noindex, name: noindex, widget: boolean, required: false }
 
   - name: 'settings'
     label: Einstellungen
-    delete: false # Prevent users from deleting documents in this collection
+    delete: false
     editor:
       preview: false
     files:
@@ -313,7 +280,7 @@ collections: # A list of collections the CMS should be able to edit
               required: false,
             }
           - label: Bild für Verlinkung in Sozialen Medien
-            name: socialMediaCard2
+            name: socialMediaCard
             widget: image
           - {
               label: Google Analytics Tracking ID,
