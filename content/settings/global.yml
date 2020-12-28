@@ -1,7 +1,6 @@
-siteTitle: Yellow Cake
-siteUrl: 'https://yellowcake.netlify.com'
-siteDescription: >-
-  A starter project for creating lightning-fast websites with Gatsby v2 Netlify
-  CMS v2 and Uploadcare media library.
-socialMediaCard: ''
-googleTrackingId: 'UA-133175780-1'
+siteTitle: Gatsby und NetlifyCMS Demo
+siteUrl: gatsby-netlifycms.tortuga-webdesign.de
+siteDescription: A starter project for creating lightning-fast websites with
+  Gatsby v2 Netlify CMS v2 and Uploadcare media library.
+socialMediaCard2: /content/media/boot.jpg
+googleTrackingId: ""
