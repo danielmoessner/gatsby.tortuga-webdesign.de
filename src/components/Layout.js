@@ -18,9 +18,7 @@ export default ({ children, meta, title }) => {
             siteTitle
             siteDescription
             googleTrackingId
-            socialMediaCard {
-              image
-            }
+            socialMediaCard
           }
           allPosts: allMarkdownRemark(
             filter: { fields: { contentType: { eq: "postCategories" } } }
@@ -66,8 +64,7 @@ export default ({ children, meta, title }) => {
               googleTrackingId={googleTrackingId}
               absoluteImageUrl={
                 socialMediaCard &&
-                socialMediaCard.image &&
-                socialMediaCard.image
+                socialMediaCard
               }
               {...meta}
               {...data.settingsYaml}
