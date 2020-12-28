@@ -193,51 +193,33 @@ collections:
     create: true
     fields:
       - { label: Template, name: template, widget: hidden, default: SinglePost }
-      - { label: Title, name: title, widget: string }
-      - label: 'Status'
-        name: 'status'
-        widget: 'select'
-        options: ['Published', 'Featured', 'Draft']
-        default: 'Published'
-      - { label: Date / Order, name: date, widget: date, format: 'YYYY-MM-DD' }
+      - { label: Titel, name: title, widget: string }
       - {
-          label: Featured Image,
+          label: Bild,
           name: featuredImage,
           widget: image,
           required: false,
         }
-      - { label: Excerpt, name: excerpt, widget: text }
-      - { label: Content, name: body, widget: markdown }
-      - label: 'Categories'
-        name: 'categories'
-        widget: 'list'
-        required: false
-        fields:
-          - label: 'Category'
-            name: 'category'
-            widget: 'relation'
-            collection: 'postCategories'
-            searchFields: ['title']
-            valueField: 'title'
+      - { label: Auszug, name: excerpt, widget: text }
+      - { label: Inhalt, name: body, widget: markdown }
+      - label: 'Kategorie'
+        name: 'category'
+        widget: 'relation'
+        collection: 'categories'
+        searchFields: ['title']
+        valueField: 'title'
       - label: 'Meta'
         required: false
         name: 'meta'
         widget: 'object'
         fields:
-          - { label: Title, name: title, widget: string, required: false }
+          - { label: Titel, name: title, widget: string, required: false }
           - {
-              label: Description,
+              label: Beschreibung,
               name: description,
               widget: text,
               required: false,
             }
-          - {
-              label: Canonical Link,
-              name: canonicalLink,
-              widget: string,
-              required: false,
-            }
-          - { label: Noindex, name: noindex, widget: boolean, required: false }
 
   - name: categories
     label: Kategorie
@@ -247,15 +229,15 @@ collections:
     slug: '{{slug}}'
     create: true
     fields:
-      - { label: Title, name: title, widget: string }
+      - { label: Titel, name: title, widget: string }
       - label: 'Meta'
         required: false
         name: 'meta'
         widget: 'object'
         fields:
-          - { label: Title, name: title, widget: string, required: false }
+          - { label: Titel, name: title, widget: string, required: false }
           - {
-              label: Description,
+              label: Beschreibung,
               name: description,
               widget: text,
               required: false,
