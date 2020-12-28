@@ -21,8 +21,8 @@ export default ({ children, meta, title }) => {
             socialMediaCard
           }
           allPosts: allMarkdownRemark(
-            filter: { fields: { contentType: { eq: "postCategories" } } }
-            sort: { order: DESC, fields: [frontmatter___date] }
+            filter: { fields: { contentType: { eq: "categories" } } }
+            sort: { order: DESC, fields: [frontmatter___title] }
           ) {
             edges {
               node {

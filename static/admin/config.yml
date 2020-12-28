@@ -18,125 +18,12 @@ media_folder: content/media
 # See https://www.netlifycms.org/docs/collection-types/
 collections:
   - name: 'pages'
-    label: Seite
+    label: Seiten
+    label_singular: Seite
     delete: false
     editor:
       preview: true
     files:
-      - file: 'content/pages/contact.md'
-        label: Kontakt
-        name: 'contact-page'
-        fields:
-          - {
-              label: Template,
-              name: template,
-              widget: hidden,
-              default: ContactPage,
-            }
-          - { label: Slug, name: slug, widget: hidden, default: 'contact' }
-          - { label: Title, name: title, widget: string }
-          - {
-              label: Featured Image,
-              name: featuredImage,
-              widget: image,
-              options:
-                { media_library: { config: { imageShrink: 2600x2600 } } },
-            }
-          - { label: Subtitle, name: subtitle, widget: markdown }
-          - { label: Body, name: body, widget: markdown }
-          - { label: Address, name: address, widget: text }
-          - { label: Phone, name: phone, widget: string }
-          - { label: Email Address, name: email, widget: string }
-          - name: locations
-            label: locations
-            widget: list
-            fields:
-              - {
-                  name: mapLink,
-                  label: mapLink,
-                  widget: string,
-                  required: false,
-                  default: '',
-                }
-              - {
-                  name: lat,
-                  label: latitude,
-                  widget: string,
-                  required: false,
-                  delete: false,
-                  default: '',
-                }
-              - {
-                  name: lng,
-                  label: longitude,
-                  widget: string,
-                  required: false,
-                  delete: false,
-                  default: '',
-                }
-          - label: 'Meta'
-            required: false
-            name: 'meta'
-            widget: 'object'
-            fields:
-              - { label: Title, name: title, widget: string, required: false }
-              - {
-                  label: Description,
-                  name: description,
-                  widget: text,
-                  required: false,
-                }
-              - {
-                  label: Canonical Link,
-                  name: canonicalLink,
-                  widget: string,
-                  required: false,
-                }
-              - {
-                  label: Noindex,
-                  name: noindex,
-                  widget: boolean,
-                  required: false,
-                }
-
-      - file: 'content/pages/blog.md'
-        label: Blog
-        name: 'blog-page'
-        fields:
-          - {
-              label: Template,
-              name: template,
-              widget: hidden,
-              default: BlogIndex,
-            }
-          - { label: Slug, name: slug, widget: hidden, default: 'blog' }
-          - { label: Title, name: title, widget: string }
-          - { label: Featured Image, name: featuredImage, widget: image }
-          - { label: Subtitle, name: subtitle, widget: markdown }
-          - label: 'Meta'
-            required: false
-            name: 'meta'
-            widget: 'object'
-            fields:
-              - { label: Title, name: title, widget: string, required: false }
-              - {
-                  label: Description,
-                  name: description,
-                  widget: text,
-                  required: false,
-                }
-              - {
-                  label: Canonical Link,
-                  name: canonicalLink,
-                  widget: string,
-                  required: false,
-                }
-              - {
-                  label: Noindex,
-                  name: noindex,
-                  widget: boolean,
-                  required: false,
-                }
       - file: 'content/pages/home.md'
         label: Startseite
         name: 'home-page'
@@ -145,7 +32,7 @@ collections:
               label: Template,
               name: template,
               widget: hidden,
-              default: HomePage,
+              default: home,
             }
           - { label: Slug, name: slug, widget: hidden, default: '' }
           - { label: Title, name: title, widget: string }
@@ -185,14 +72,15 @@ collections:
                 }
 
   - name: animals
-    label: Wildtier
+    label: Wildtiere
+    label_singular: Wildtier
     editor:
       preview: true
     folder: content/animals
     slug: '{{slug}}'
     create: true
     fields:
-      - { label: Template, name: template, widget: hidden, default: SinglePost }
+      - { label: Template, name: template, widget: hidden, default: animal }
       - { label: Titel, name: title, widget: string }
       - {
           label: Bild,
@@ -222,7 +110,8 @@ collections:
             }
 
   - name: categories
-    label: Kategorie
+    label: Kategorien
+    label_singular: Kategorie
     editor:
       preview: false
     folder: content/categories
@@ -245,6 +134,7 @@ collections:
 
   - name: 'settings'
     label: Einstellungen
+    label_singular: Einstellung
     delete: false
     editor:
       preview: false
