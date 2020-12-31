@@ -1,7 +1,7 @@
 ---
 template: animal
 title: Hase
-featuredImage: /content/media/rabbit.jpg
+image: ../media/rabbit.jpg
 excerpt: Der Feldhase (Lepus europaeus), kurz auch Hase genannt, ist ein
   Säugetier aus der Familie der Hasen (Leporidae).
 category: Säugetiere
