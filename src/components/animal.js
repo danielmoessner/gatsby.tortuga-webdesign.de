@@ -5,7 +5,7 @@ import {Link} from 'gatsby'
 export default function Animal(props) {
   return (
     <div>
-      <div className="shadow">
+      <div className="shadow rounded-lg">
       <Link to={'wildtiere/' + props.animal.slug }>
         <Img className="rounded-lg" fluid={props.animal.image.childImageSharp.fluid} />
       </Link>
