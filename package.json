@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "@tailwindcss/typography": "^0.3.1",
     "autoprefixer": "^10.1.0",
     "dom-form-serializer": "^1.0.7",
     "gatsby": "^2.29.3",
@@ -48,11 +49,11 @@
   },
   "main": "npm run dev",
   "scripts": {
-    "start": "npm run clean && npm run develop",
     "build": "gatsby build",
-    "dev": "nodemon --exec 'kill-port --port 8000 && gatsby develop' --watch gatsby-node.js --watch package.json --watch gatsby-config.js",
+    "dev": "nodemon --exec 'kill-port --port 8000 && gatsby develop' --watch gatsby-node.js --watch package.json --watch gatsby-config.js && npm run cms",
     "clean": "del-cli .cache public",
     "serve": "gatsby serve",
+    "cms": "npx netlify-cms-proxy-server",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

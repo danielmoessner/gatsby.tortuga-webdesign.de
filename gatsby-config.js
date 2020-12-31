@@ -2,8 +2,8 @@ const postcssPresetEnv = require('postcss-preset-env')
 
 module.exports = {
   siteMetadata: {
-    title: 'Yellowcake',
-    siteUrl: 'https://yellowcake.netlify.com'
+    title: 'Wildtiere',
+    siteUrl: 'https://gatsby-netlifycms.tortuga-webdesign.de'
   },
   plugins: [
     'gatsby-plugin-sharp',
@@ -15,38 +15,38 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/animals`,
-        name: 'animals'
+        path: `${__dirname}/content`,
+        name: 'content'
       }
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/categories`,
-        name: 'categories'
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
-    },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/content/categories`,
+    //     name: 'categories'
+    //   }
+    // },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/src/pages`,
+    //     name: 'pages'
+    //   }
+    // },
     {
       resolve: 'gatsby-source-filesystem', 
       options: {
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/static/images`,
         name: 'images'
       }
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/media`,
-        name: 'media'
-      }
-    },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/content/media`,
+    //     name: 'media'
+    //   }
+    // },
     // images
     
     // {

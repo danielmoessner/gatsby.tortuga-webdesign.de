@@ -1,8 +1,9 @@
 ---
 collection: animal
 title: Hirsch
-featuredImage: /content/media/deer.jpg
+image: ../media/deer.jpg
 excerpt: hirsch
 category: Säugetiere
+slug: hirsch
 ---
 hirsch

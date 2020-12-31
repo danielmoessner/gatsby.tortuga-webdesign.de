@@ -3,6 +3,9 @@ backend:
   name: git-gateway
   branch: main
 
+# See https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
+local_backend: true
+
 # See https://www.netlifycms.org/docs/configuration-options/#locale
 locale: de
 
@@ -13,7 +16,10 @@ display_url: https://gatsby-netlifycms.tortuga-webdesign.de
 site_url: https://gatsby-netlifycms.tortuga-webdesign.de 
 
 # See https://www.netlifycms.org/docs/configuration-options/#media-folder
-media_folder: content/media
+media_folder: /content/media
+
+# See https://www.netlifycms.org/docs/configuration-options/#public-folder
+public_folder: ../media
 
 # See https://www.netlifycms.org/docs/collection-types/
 collections:
