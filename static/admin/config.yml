@@ -17,7 +17,7 @@ media_folder: content/media
 
 # See https://www.netlifycms.org/docs/collection-types/
 collections:
-  - name: 'pages'
+  - name: page
     label: Seiten
     label_singular: Seite
     delete: false
@@ -28,6 +28,7 @@ collections:
         label: Startseite
         name: 'home-page'
         fields:
+          - { label: Sammlung, name: collection, widget: hidden, default: page }
           - {
               label: Template,
               name: template,
@@ -71,7 +72,7 @@ collections:
                   required: false,
                 }
 
-  - name: animals
+  - name: animal
     label: Wildtiere
     label_singular: Wildtier
     editor:
@@ -80,20 +81,19 @@ collections:
     slug: '{{slug}}'
     create: true
     fields:
-      - { label: Template, name: template, widget: hidden, default: animal }
+      - { label: Sammlung, name: collection, widget: hidden, default: animal }
       - { label: Titel, name: title, widget: string }
       - {
           label: Bild,
-          name: featuredImage,
-          widget: image,
-          required: false,
+          name: image,
+          widget: image
         }
       - { label: Auszug, name: excerpt, widget: text }
       - { label: Inhalt, name: body, widget: markdown }
       - label: 'Kategorie'
         name: 'category'
         widget: 'relation'
-        collection: 'categories'
+        collection: 'category'
         searchFields: ['title']
         valueField: 'title'
       - label: 'Meta'
@@ -109,7 +109,7 @@ collections:
               required: false,
             }
 
-  - name: categories
+  - name: category
     label: Kategorien
     label_singular: Kategorie
     editor:
@@ -118,6 +118,7 @@ collections:
     slug: '{{slug}}'
     create: true
     fields:
+      - { label: Sammlung, name: collection, widget: hidden, default: category }
       - { label: Titel, name: title, widget: string }
       - label: 'Meta'
         required: false
@@ -132,7 +133,7 @@ collections:
               required: false,
             }
 
-  - name: 'settings'
+  - name: 'setting'
     label: Einstellungen
     label_singular: Einstellung
     delete: false
@@ -143,6 +144,7 @@ collections:
         label: Global
         name: 'global-settings'
         fields:
+          - { label: Sammlung, name: collection, widget: hidden, default: setting }
           - { label: Titel der Seite, name: siteTitle, widget: string }
           - { label: URL der Seite, name: siteUrl, widget: string, required: false }
           - {

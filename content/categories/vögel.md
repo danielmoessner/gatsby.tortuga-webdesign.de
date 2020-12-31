@@ -1,3 +1,4 @@
 ---
 title: Vögel
+slug: voegel
 ---
