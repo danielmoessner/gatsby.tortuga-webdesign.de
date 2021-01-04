@@ -28,55 +28,24 @@ collections:
     label_singular: Seite
     delete: false
     editor:
-      preview: true
+      preview: false
     files:
-      - file: 'content/pages/home.md'
+      - file: content/pages/home.md
         label: Startseite
-        name: 'home-page'
+        name: home
         fields:
           - { label: Sammlung, name: collection, widget: hidden, default: page }
-          - {
-              label: Template,
-              name: template,
-              widget: hidden,
-              default: home,
-            }
-          - { label: Slug, name: slug, widget: hidden, default: '' }
-          - { label: Title, name: title, widget: string }
-          - { label: Featured Image, name: featuredImage, widget: image }
-          - { label: Subtitle, name: subtitle, widget: markdown, required: false }
-          - { label: Body, name: body, widget: markdown }
-          - label: 'Accordion'
-            name: 'accordion'
-            widget: 'list'
-            required: false
-            fields:
-              - { label: 'Title', name: 'title', widget: 'string' }
-              - { label: Content, name: content, widget: text }
+          - { label: Slug, name: slug, widget: hidden, default: home }
           - label: 'Meta'
             required: false
             name: 'meta'
             widget: 'object'
             fields:
-              - { label: Title, name: title, widget: string, required: false }
-              - {
-                  label: Description,
-                  name: description,
-                  widget: text,
-                  required: false,
-                }
-              - {
-                  label: Canonical Link,
-                  name: canonicalLink,
-                  widget: string,
-                  required: false,
-                }
-              - {
-                  label: Noindex,
-                  name: noindex,
-                  widget: boolean,
-                  required: false,
-                }
+              - { label: Titel, name: title, widget: string }
+              - label: Beschreibung
+                name: description
+                widget: text
+              - { label: Bild, name: image, widget: image }
 
   - name: animal
     label: Wildtiere
@@ -84,8 +53,9 @@ collections:
     editor:
       preview: true
     folder: content/animals
-    slug: '{{slug}}'
+    slug: '{{fields.slug}}'
     create: true
+    preview_path: wildtiere/{{fields.slug}}
     fields:
       - { label: Sammlung, name: collection, widget: hidden, default: animal }
       - { label: Titel, name: title, widget: string }
@@ -115,18 +85,6 @@ collections:
     fields:
       - { label: Sammlung, name: collection, widget: hidden, default: category }
       - { label: Titel, name: title, widget: string }
-      - label: 'Meta'
-        required: false
-        name: 'meta'
-        widget: 'object'
-        fields:
-          - { label: Titel, name: title, widget: string, required: false }
-          - {
-              label: Beschreibung,
-              name: description,
-              widget: text,
-              required: false,
-            }
 
   - name: 'setting'
     label: Einstellungen
@@ -138,22 +96,9 @@ collections:
       - file: 'content/settings/global.yml'
         label: Global
         name: 'global-settings'
+        preview: false
         fields:
           - { label: Sammlung, name: collection, widget: hidden, default: setting }
-          - { label: Titel der Seite, name: siteTitle, widget: string }
+          - { label: Slug, name: slug, widget: hidden, default: global }
+          - { label: Titel in der Navigation, name: navigationTitle, widget: string, default: Wildtiere }
           - { label: URL der Seite, name: siteUrl, widget: string, required: false }
-          - {
-              label: Beschreibung der Seite,
-              name: siteDescription,
-              widget: text,
-              required: false,
-            }
-          - label: Bild für Verlinkung in Sozialen Medien
-            name: socialMediaCard
-            widget: image
-          - {
-              label: Google Analytics Tracking ID,
-              name: googleTrackingId,
-              widget: string,
-              required: false,
-            }

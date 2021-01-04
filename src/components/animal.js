@@ -2,22 +2,22 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 
-export default function Animal({ title, slug, imageFluid, imageComponent, category, excerpt }) {
+export default function Animal({
+  title,
+  slug,
+  imageFluid,
+  imageComponent,
+  category,
+  excerpt,
+}) {
   return (
     <div>
       <div className="shadow rounded-lg">
         <Link to={'wildtiere/' + slug}>
-          {imageFluid && 
-            <Img
-              className="rounded-lg"
-              fluid={imageFluid}
-            />
-          }
-          {imageComponent &&
-            <div className="rounded-lg overflow-hidden">
-              {imageComponent}
-            </div>
-          }
+          {imageFluid && <Img className="rounded-lg" fluid={imageFluid} />}
+          {imageComponent && (
+            <div className="rounded-lg overflow-hidden">{imageComponent}</div>
+          )}
         </Link>
       </div>
       <div className="px-2 pt-4 flex flex-col justify-start items-start">
@@ -30,9 +30,7 @@ export default function Animal({ title, slug, imageFluid, imageComponent, catego
           </h2>
         </Link>
         <Link to={'wildtiere/' + slug}>
-          <p className="text-sm leading-tight text-gray-900">
-            {excerpt}
-          </p>
+          <p className="text-sm leading-tight text-gray-900">{excerpt}</p>
         </Link>
       </div>
     </div>

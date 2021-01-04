@@ -2,19 +2,26 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
+import Seo from '../components/seo'
 
 export const AnimalTemplate = ({
   title,
   imageComponent,
   imageFluid,
   category,
+  excerpt,
   body,
   html,
 }) => {
   return (
     <div>
+      {imageFluid ? <Seo title={title} description={excerpt} image={imageFluid.src} /> : null}
       <div className="mb-6">
-        <Hero imageComponent={imageComponent} imageFluid={imageFluid} alt={title} />
+        <Hero
+          imageComponent={imageComponent}
+          imageFluid={imageFluid}
+          alt={title}
+        />
       </div>
       <div className="max-w-xl w-full mx-auto mb-3">
         <div className="text-gray-600 uppercase font-medium leading-tight tracking-tight -mb-2">
@@ -47,7 +54,7 @@ export default function Animal({ data }) {
     <Layout>
       <AnimalTemplate {...frontmatter} html={html} imageFluid={imageFluid} />
     </Layout>
-    )
+  )
 }
 
 export const query = graphql`

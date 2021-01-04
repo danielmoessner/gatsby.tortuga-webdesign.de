@@ -13,13 +13,21 @@ const AnimalPreview = ({ entry, widgetFor }) => {
   return (
     <Container>
       <div className="pb-32 pt-5">
-        <AnimalTemplate {...entry.toJS().data} imageComponent={widgetFor('image')} body={widgetFor('body')}></AnimalTemplate>
-        <hr className="bg-gray-600 my-10"/>
-        <div className='max-w-xs'>
-          <AnimalCard {...entry.toJS().data} imageComponent={widgetFor('image')} />
+        <AnimalTemplate
+          {...entry.toJS().data}
+          imageComponent={widgetFor('image')}
+          body={widgetFor('body')}
+        ></AnimalTemplate>
+        <hr className="bg-gray-600 my-10" />
+        <div className="max-w-xs">
+          <AnimalCard
+            {...entry.toJS().data}
+            imageComponent={widgetFor('image')}
+          />
         </div>
       </div>
     </Container>
-)}
+  )
+}
 
 CMS.registerPreviewTemplate('animal', AnimalPreview)

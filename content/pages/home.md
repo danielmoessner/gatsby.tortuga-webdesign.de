@@ -1,12 +1,11 @@
 ---
-template: home
-slug: ''
-title: Yellowcake
-featuredImage: 'https://ucarecdn.com/159203d3-881d-4218-baa1-ca4427b48d0d/'
-subtitle: ' Welcome to the ultimate Gatsby and Netlify starter project.'
+collection: page
+slug: home
 meta:
-  description: This is a meta description.
-  title: The Ultimate Gatsby Starter
+  description: Informationen und Wissenswertes über die in Deutschland lebenden
+    Wildtiere. Von Wildschweinen über Rehen bis hin zu den Bergenten.
+  title: Wildtiere in Deutschland
+  image: ../media/elch.jpg
 ---
 
 Yellowcake is an opinionated starter project created by [Thrive Digital](https://thriveweb.com.au/) a [Gold Coast Web Design](https://thriveweb.com.au/) studio. to help you create lightning fast websites with [Gatsby](https://gatsbyjs.org) and [Netlify CMS](https://netlifycms.org).
