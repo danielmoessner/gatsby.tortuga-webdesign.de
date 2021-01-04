@@ -5,6 +5,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Wildtiere",
+        short_name: "Wildtiere",
+        start_url: "/",
+        icon: "static/images/favicon.svg",
+      },
+    },
+    {
       resolve: `gatsby-plugin-sharp`,
       options: {
         icon: 'static/images/favicon.svg'
