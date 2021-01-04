@@ -1,11 +1,18 @@
 import React from 'react'
 import Img from 'gatsby-image'
 
-export default function Hero(props) {
+export default function Hero({ imageComponent, imageFluid, alt }) {
   return (
     <section className="w-full">
       <div className="shadow rounded-lg">
-        <Img className="rounded-lg" fluid={props.image} alt={props.alt} />
+        {imageFluid &&
+          <Img className="rounded-lg" fluid={imageFluid} alt={alt} />
+        }
+        {imageComponent &&
+          <div className="rounded-lg overflow-hidden">
+            {imageComponent}
+          </div>
+        }
       </div>
     </section>
   )

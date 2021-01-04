@@ -110,7 +110,6 @@
 // // Random fix for https://github.com/gatsbyjs/gatsby/issues/5700
 // module.exports.resolvableExtensions = () => ['.json']
 
-
 // const { createFilePath } = require(`gatsby-source-filesystem`)
 const path = require('path')
 
@@ -146,7 +145,9 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create the animal pages
   const result = await graphql(`
     query {
-      allMarkdownRemark(filter: {frontmatter: {collection: {eq: "animal"}}}) {
+      allMarkdownRemark(
+        filter: { frontmatter: { collection: { eq: "animal" } } }
+      ) {
         edges {
           node {
             frontmatter {
@@ -166,7 +167,7 @@ exports.createPages = async ({ graphql, actions }) => {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.frontmatter.slug,
-        id: node.id
+        id: node.id,
       },
     })
   })

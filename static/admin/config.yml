@@ -89,6 +89,7 @@ collections:
     fields:
       - { label: Sammlung, name: collection, widget: hidden, default: animal }
       - { label: Titel, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string }
       - {
           label: Bild,
           name: image,
@@ -102,18 +103,6 @@ collections:
         collection: 'category'
         searchFields: ['title']
         valueField: 'title'
-      - label: 'Meta'
-        required: false
-        name: 'meta'
-        widget: 'object'
-        fields:
-          - { label: Titel, name: title, widget: string, required: false }
-          - {
-              label: Beschreibung,
-              name: description,
-              widget: text,
-              required: false,
-            }
 
   - name: category
     label: Kategorien

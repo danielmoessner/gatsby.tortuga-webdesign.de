@@ -50,7 +50,8 @@
   "main": "npm run dev",
   "scripts": {
     "build": "gatsby build",
-    "dev": "nodemon --exec 'kill-port --port 8000 && gatsby develop' --watch gatsby-node.js --watch package.json --watch gatsby-config.js && npm run cms",
+    "dev": "npm-run-all --parallel gatsby cms",
+    "gatsby": "nodemon --exec 'kill-port --port 8000 && gatsby develop' --watch gatsby-node.js --watch package.json --watch gatsby-config.js",
     "clean": "del-cli .cache public",
     "serve": "gatsby serve",
     "cms": "npx netlify-cms-proxy-server",
@@ -61,7 +62,8 @@
     "del-cli": "^3.0.0",
     "kill-port": "^1.6.1",
     "nodemon": "^2.0.6",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "npm-run-all": "^4.1.5"
   },
   "browserslist": "defaults"
 }
