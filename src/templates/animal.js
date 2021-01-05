@@ -31,17 +31,19 @@ export const AnimalTemplate = ({
           {title}
         </h2>
       </div>
+      <div className="max-w-xl w-full mx-auto mb-40">
       {html && (
         <article
-          className="prose lg:prose-xl max-w-xl w-full mx-auto mb-40"
+          className="prose-sm sm:prose lg:prose-xl"
           dangerouslySetInnerHTML={{ __html: html }}
         ></article>
       )}
       {body && (
-        <article className="prose lg:prose-xl max-w-xl w-full mx-auto mb-40">
+        <article className="sm:prose lg:prose-xl prose-sm">
           {body}
         </article>
       )}
+      </div>
     </div>
   )
 }

@@ -11,7 +11,7 @@ export default function Index(props) {
     <Layout>
       <Seo title={homePage.title} description={homePage.description} image={homePage.image.childImageSharp.fluid.src} />
       <div className="">
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:gap-6">
           {animals.map((animal) => (
             <Animal
               key={animal.id}
