@@ -14,7 +14,7 @@ export default function Animal({
     <div>
       <div className="shadow rounded-lg">
         <Link to={'wildtiere/' + slug}>
-          {imageFluid && <Img className="rounded-lg" fluid={imageFluid} />}
+          {imageFluid && <Img alt={title} className="rounded-lg" fluid={imageFluid} />}
           {imageComponent && (
             <div className="rounded-lg overflow-hidden">{imageComponent}</div>
           )}
