@@ -1,6 +1,8 @@
 {
   "name": "gatsby-netlifycms",
   "description": "An example project which demonstrates the technologies Tortuga Webdesign uses.",
+  "license": "UNLICENSED",
+  "private": true,
   "version": "0.0.0",
   "repository": {
     "type": "git",
