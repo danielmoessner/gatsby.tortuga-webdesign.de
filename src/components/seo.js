@@ -2,7 +2,9 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 const SEO = ({ url, title, description, image, isBlogPost }) => (
-  <Helmet>
+  <Helmet
+    htmlAttributes={{"lang": "de"}}
+  >
     {/* General tags */}
     <title>{title}</title>
     <meta name="description" content={description} />
