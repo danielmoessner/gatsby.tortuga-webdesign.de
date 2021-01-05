@@ -1,6 +1,5 @@
 module.exports = {
   siteMetadata: {
-    title: 'Wildtiere',
     siteUrl: 'https://gatsby-netlifycms.tortuga-webdesign.de',
   },
   plugins: [
@@ -48,5 +47,6 @@ module.exports = {
         htmlFavicon: `${__dirname}/static/images/favicon.svg`,
       },
     },
+    'gatsby-plugin-sitemap'
   ],
 }
