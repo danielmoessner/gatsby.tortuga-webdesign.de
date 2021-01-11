@@ -1,3 +1,4 @@
+
 # See https://www.netlifycms.org/docs/configuration-options/#backend
 backend:
   name: git-gateway
