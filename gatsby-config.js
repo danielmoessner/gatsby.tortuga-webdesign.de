@@ -20,7 +20,19 @@ module.exports = {
       },
     },
     'gatsby-transformer-sharp',
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+      },
+    },
     'gatsby-transformer-yaml',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
