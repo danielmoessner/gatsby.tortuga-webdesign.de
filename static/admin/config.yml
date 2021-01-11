@@ -1,8 +1,8 @@
-
 # See https://www.netlifycms.org/docs/configuration-options/#backend
 backend:
   name: git-gateway
   branch: main
+  repo: danielmoessner/gatsby-netlifycms.tortuga-webdesign.de
 
 # See https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
 local_backend: true
