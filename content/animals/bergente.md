@@ -1,6 +1,7 @@
 ---
 collection: animal
 title: Bergente
+slug: bergente
 image: ../media/ravi-singh-rn3dqzdrhdk-unsplash.jpg
 excerpt: Die Stockente ist die größte und am häufigsten vorkommende Schwimmente
   Europas und die Stammform der Hausente.

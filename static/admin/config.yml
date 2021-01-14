@@ -60,6 +60,7 @@ collections:
     fields:
       - { label: Sammlung, name: collection, widget: hidden, default: animal }
       - { label: Titel, name: title, widget: string }
+      - { label: Slug, name: slug, widget: string }
       - {
           label: Bild,
           name: image,
