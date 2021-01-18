@@ -26,7 +26,7 @@ function SEO({ url, title, description, image, isBlogPost }) {
       {/* General tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="image" content={image} />
+      {image ? <meta name="image" content={image} /> : null}
       <link rel="canonical" href={url} />
 
       {/* OpenGraph tags */}
@@ -34,13 +34,13 @@ function SEO({ url, title, description, image, isBlogPost }) {
       {isBlogPost ? <meta property="og:type" content="article" /> : null}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      {image ? <meta property="og:image" content={image} /> : null}
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      {image ? <meta name="twitter:image" content={image} /> : null}
 
       {/* Different Favicons */}
       <link rel="icon" type="image/png" href={favicon} sizes="256x256" />
@@ -52,6 +52,7 @@ function SEO({ url, title, description, image, isBlogPost }) {
 SEO.defaultProps = {
   isBlogPost: false,
   url: '',
+  image: '',
 };
 
 SEO.propTypes = {
@@ -59,7 +60,7 @@ SEO.propTypes = {
   isBlogPost: PropTypes.bool,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 export default SEO;
