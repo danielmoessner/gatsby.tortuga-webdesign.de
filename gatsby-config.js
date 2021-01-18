@@ -3,22 +3,9 @@ module.exports = {
     siteUrl: 'https://gatsby-netlifycms.tortuga-webdesign.de',
   },
   plugins: [
+    'gatsby-plugin-eslint',
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'Wildtiere',
-        short_name: 'Wildtiere',
-        start_url: '/',
-        icon: 'static/images/favicon.svg',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-sharp',
-      options: {
-        icon: 'static/images/favicon.svg',
-      },
-    },
+    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
@@ -53,12 +40,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
+        modulePath: `${__dirname}/src/cms/cms.jsx`,
         enableIdentityWidget: true,
         htmlTitle: 'CMS',
         htmlFavicon: `${__dirname}/static/images/favicon.svg`,
       },
     },
-    'gatsby-plugin-sitemap'
+    'gatsby-plugin-sitemap',
   ],
-}
+};

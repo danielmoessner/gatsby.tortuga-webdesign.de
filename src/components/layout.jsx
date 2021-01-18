@@ -1,16 +1,17 @@
-import React from 'react'
-import Container from '../components/container'
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import React from 'react';
+import { graphql, Link, useStaticQuery } from 'gatsby';
+import PropTypes from 'prop-types';
+import Container from './container';
 
-export default function Layout({ children }) {
+function Layout({ children }) {
   const data = useStaticQuery(graphql`
     {
       settingsYaml {
         navigationTitle
       }
-    }`
-  ).settingsYaml
-  
+    }
+  `).settingsYaml;
+
   return (
     <div>
       <Container>
@@ -28,5 +29,11 @@ export default function Layout({ children }) {
         <main className="pt-5">{children}</main>
       </Container>
     </div>
-  )
+  );
 }
+
+Layout.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+export default Layout;
