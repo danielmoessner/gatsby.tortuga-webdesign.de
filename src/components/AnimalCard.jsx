@@ -4,13 +4,18 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import ImageFluid from '../types/ImageFluid';
 
-function Animal({ title, slug, image, category, excerpt, preview }) {
+function AnimalCard({ title, slug, image, category, excerpt, preview }) {
   return (
     <div>
       <div className="shadow rounded-lg">
-        <Link to={`wildtiere/${slug}`}>
+        <Link className={!preview ? 'block aspect-w-16 aspect-h-10' : ''} to={`wildtiere/${slug}`}>
           {!preview ? (
-            <Img alt={title} className="rounded-lg" fluid={image} />
+            <Img
+              alt={title}
+              className="rounded-lg"
+              style={{ position: 'absolute' }}
+              fluid={image}
+            />
           ) : (
             <div className="rounded-lg overflow-hidden">{image}</div>
           )}
@@ -31,11 +36,11 @@ function Animal({ title, slug, image, category, excerpt, preview }) {
   );
 }
 
-Animal.defaultProps = {
+AnimalCard.defaultProps = {
   preview: false,
 };
 
-Animal.propTypes = {
+AnimalCard.propTypes = {
   title: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
@@ -44,4 +49,4 @@ Animal.propTypes = {
   preview: PropTypes.bool,
 };
 
-export default Animal;
+export default AnimalCard;

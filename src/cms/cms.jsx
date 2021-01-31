@@ -1,11 +1,12 @@
-/* eslint-disable react/prop-types, react/jsx-props-no-spreading */
+/* eslint-disable react/prop-types */
 
 import CMS from 'netlify-cms-app';
 import { de } from 'netlify-cms-locales';
 import React from 'react';
-import { AnimalTemplate } from '../templates/animal';
-import AnimalCard from '../components/animal';
-import Container from '../components/container';
+import Animal from '../components/Animal';
+import AnimalCard from '../components/AnimalCard';
+import Container from '../components/Container';
+import '../styles/global.css';
 
 // Localization
 CMS.registerLocale('de', de);
@@ -14,15 +15,24 @@ CMS.registerLocale('de', de);
 const AnimalPreview = ({ entry, widgetFor }) => (
   <Container>
     <div className="pb-32 pt-5">
-      <AnimalTemplate
-        {...entry.toJS().data}
+      <Animal
         preview
+        title={entry.getIn(['data', 'entry'])}
+        category={entry.getIn(['data', 'category'])}
+        excerpt={entry.getIn(['data', 'excerp'])}
         image={widgetFor('image')}
         body={widgetFor('body')}
       />
       <hr className="bg-gray-600 my-10" />
       <div className="max-w-xs">
-        <AnimalCard preview {...entry.toJS().data} image={widgetFor('image')} />
+        <AnimalCard
+          preview
+          title={entry.getIn(['data', 'entry'])}
+          slug={entry.getIn(['data', 'slug'])}
+          category={entry.getIn(['data', 'category'])}
+          excerpt={entry.getIn(['data', 'excerpt'])}
+          image={widgetFor('image')}
+        />
       </div>
     </div>
   </Container>

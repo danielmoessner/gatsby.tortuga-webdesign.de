@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
-import Container from './container';
+import Container from './Container';
 
 function Layout({ children }) {
   const data = useStaticQuery(graphql`
