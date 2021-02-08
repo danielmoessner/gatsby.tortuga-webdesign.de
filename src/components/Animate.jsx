@@ -3,33 +3,27 @@ import PropTypes from 'prop-types';
 
 function Animate({ animateClass, children }) {
   const [isIntersecting, setIsIntersecting] = useState(false);
+
   const ref = useRef();
 
-  const observer = useRef(
+  useEffect(() => {
     // eslint-disable-next-line no-undef
-    new IntersectionObserver(
-      ([entry]) => {
+    const observer = new IntersectionObserver(
+      ([entry], obs) => {
         setIsIntersecting(entry.isIntersecting);
+        if (isIntersecting) obs.disconnect();
       },
       {
         threshold: 0.01,
         rootMargin: '0px 0px -200px 0px',
       }
-    )
-  );
-
-  useEffect(() => {
-    const { current: currentObserver } = observer;
-    if (ref.current) currentObserver.observe(ref.current);
+    );
+    if (ref.current) observer.observe(ref.current);
     // Remove the observer as soon as the component is unmounted
     return () => {
-      currentObserver.disconnect();
+      observer.disconnect();
     };
-  }, []);
-
-  if (isIntersecting) {
-    observer.current.disconnect();
-  }
+  }, [isIntersecting]);
 
   return (
     <div ref={ref}>
