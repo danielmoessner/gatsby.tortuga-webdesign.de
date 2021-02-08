@@ -31,7 +31,7 @@ collections:
     editor:
       preview: false
     files:
-      - file: content/pages/home.md
+      - file: content/pages/home.yml
         label: Startseite
         name: home
         fields:
@@ -94,23 +94,13 @@ collections:
         name: 'global-settings'
         preview: false
         fields:
-          - {
-              label: Sammlung,
-              name: collection,
-              widget: hidden,
-              default: setting
-            }
+          - { label: Sammlung, name: collection, widget: hidden, default: setting }
           - { label: Slug, name: slug, widget: hidden, default: global }
           - {
               label: Titel in der Navigation,
               name: navigationTitle,
               widget: string,
-              default: Wildtiere
+              default: Wildtiere,
             }
-          - {
-              label: URL der Seite,
-              name: siteUrl,
-              widget: string,
-              required: false
-            }
+          - { label: URL der Seite, name: siteUrl, widget: string, required: false }
           - { label: Favicon, name: favicon, widget: image }

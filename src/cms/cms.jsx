@@ -17,7 +17,7 @@ const AnimalPreview = ({ entry, widgetFor }) => (
     <div className="pb-32 pt-5">
       <Animal
         preview
-        title={entry.getIn(['data', 'entry'])}
+        title={entry.getIn(['data', 'title'])}
         category={entry.getIn(['data', 'category'])}
         excerpt={entry.getIn(['data', 'excerp'])}
         image={widgetFor('image')}
@@ -27,7 +27,7 @@ const AnimalPreview = ({ entry, widgetFor }) => (
       <div className="max-w-xs">
         <AnimalCard
           preview
-          title={entry.getIn(['data', 'entry'])}
+          title={entry.getIn(['data', 'title'])}
           slug={entry.getIn(['data', 'slug'])}
           category={entry.getIn(['data', 'category'])}
           excerpt={entry.getIn(['data', 'excerpt'])}
