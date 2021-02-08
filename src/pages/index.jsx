@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Layout from '../components/Layout';
 import AnimalCard from '../components/AnimalCard';
 import Seo from '../components/Seo';
+import Animate from '../components/Animate';
 
 function index({ data }) {
   const homePage = data.pagesYaml;
@@ -20,14 +21,15 @@ function index({ data }) {
         <div className="">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:gap-6">
             {animals.map((animal) => (
-              <AnimalCard
-                key={animal.id}
-                slug={animal.frontmatter.slug}
-                excerpt={animal.frontmatter.excerpt}
-                category={animal.frontmatter.category}
-                title={animal.frontmatter.title}
-                image={animal.frontmatter.image.childImageSharp.fluid}
-              />
+              <Animate key={animal.id}>
+                <AnimalCard
+                  slug={animal.frontmatter.slug}
+                  excerpt={animal.frontmatter.excerpt}
+                  category={animal.frontmatter.category}
+                  title={animal.frontmatter.title}
+                  image={animal.frontmatter.image.childImageSharp.fluid}
+                />
+              </Animate>
             ))}
           </div>
         </div>

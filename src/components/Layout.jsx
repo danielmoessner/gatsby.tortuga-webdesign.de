@@ -26,7 +26,7 @@ function Layout({ children }) {
         </header>
       </Container>
       <Container>
-        <main className="pt-5">{children}</main>
+        <main className="pt-5 pb-20">{children}</main>
       </Container>
     </div>
   );
