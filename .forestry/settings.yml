@@ -9,11 +9,11 @@ sections:
   label: Animal
   create: documents
   match: "/content/animals/*"
-  new_doc_ext: ".md"
-upload_dir: uploads
-public_path: "/uploads"
-front_matter_path: ''
-use_front_matter_path: false
+  new_doc_ext: md
+upload_dir: content/media
+public_path: ''
+front_matter_path: "../media"
+use_front_matter_path: true
 file_template: ":filename:"
 build:
   preview_output_directory: public
