@@ -20,6 +20,8 @@ fields:
 - type: textarea
   name: excerpt
   label: excerpt
-- type: text
-  name: category
-  label: category
+- name: category
+  type: include
+  config: {}
+  template: category
+  label: Category
