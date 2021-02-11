@@ -1,7 +1,8 @@
+---
 collection: page
 slug: home
 meta:
-  description: Informationen und Wissenswertes über die in Deutschland lebenden
-    Wildtiere. Von Wildschweinen über Rehen bis hin zu den Bergenten.
-  title: Wildtiere in Deutschland
-  image: ../media/elch.jpg
+  description: Informationen und Wissenswertes über die in Deutschland lebenden Wildtiere.
+    Von Wildschweinen über Rehen bis hin zu den Bergenten.
+  title: Wildtiere in Deutschland (Test)
+  image: "../media/elch.jpg"
