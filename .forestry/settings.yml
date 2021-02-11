@@ -8,10 +8,10 @@ sections:
   path: content/pages/home.yml
   label: Index
 - type: directory
-  path: The animals on the website
+  path: content/animals
   label: Animal
   create: documents
-  match: content/animals/*
+  match: "*.md"
   new_doc_ext: md
 upload_dir: content/media
 public_path: content/media
