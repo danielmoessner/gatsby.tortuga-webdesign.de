@@ -4,6 +4,12 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: directory
+  path: content/categories
+  label: Category
+  create: documents
+  match: "*"
+  new_doc_ext: ".md"
 - type: document
   path: content/pages/home.yml
   label: Index
@@ -12,7 +18,7 @@ sections:
   label: Animal
   create: documents
   match: "**/*"
-  new_doc_ext: ".md"
+  new_doc_ext: md
 upload_dir: content/media
 public_path: content/media
 front_matter_path: "../media"
