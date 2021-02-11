@@ -11,7 +11,7 @@ sections:
   path: The animals on the website
   label: Animal
   create: documents
-  match: "/content/animals/*"
+  match: content/animals/*
   new_doc_ext: md
 upload_dir: content/media
 public_path: content/media
