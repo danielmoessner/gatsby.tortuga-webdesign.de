@@ -10,7 +10,7 @@ sections:
   path: content/animals
   label: Animal
   create: documents
-  match: "**/*"
+  match: "*"
   new_doc_ext: md
 - type: directory
   path: content/categories
