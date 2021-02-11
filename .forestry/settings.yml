@@ -11,8 +11,8 @@ sections:
   path: content/animals
   label: Animal
   create: documents
-  match: "*.md"
-  new_doc_ext: md
+  match: "**/*"
+  new_doc_ext: ".md"
 upload_dir: content/media
 public_path: content/media
 front_matter_path: "../media"
