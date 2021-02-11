@@ -4,6 +4,10 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: document
+  path: content/pages/home.yml
+  label: Index
+  match: "**/*"
 - type: directory
   path: The animals on the website
   label: Animal
