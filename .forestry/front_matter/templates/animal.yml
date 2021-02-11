@@ -2,6 +2,11 @@
 label: Animal
 hide_body: false
 fields:
+- name: category
+  type: include
+  config: {}
+  template: category
+  label: Category
 - type: text
   name: template
   label: template
@@ -20,8 +25,3 @@ fields:
 - type: textarea
   name: excerpt
   label: excerpt
-- name: category
-  type: include
-  config: {}
-  template: category
-  label: Category
