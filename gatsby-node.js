@@ -7,20 +7,18 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(`
     query {
       allMarkdownRemark(filter: { frontmatter: { collection: { eq: "animal" } } }) {
-        edges {
-          node {
-            frontmatter {
-              slug
-            }
-            id
+        nodes {
+          frontmatter {
+            slug
           }
+          id
         }
       }
     }
   `);
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.allMarkdownRemark.nodes.forEach((node) => {
     createPage({
-      path: `wildtiere/${node.frontmatter.slug}`,
+      path: `wildtiere/${node.frontmatter.slug}/`,
       component: path.resolve(`./src/templates/animal.jsx`),
       context: {
         // Data passed to context is available

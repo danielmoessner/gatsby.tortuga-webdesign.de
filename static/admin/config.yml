@@ -73,6 +73,7 @@ collections:
   - name: category
     label: Kategorien
     label_singular: Kategorie
+    extension: yml
     editor:
       preview: false
     folder: content/categories

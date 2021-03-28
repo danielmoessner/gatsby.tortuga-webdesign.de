@@ -12,30 +12,22 @@ import '../styles/global.css';
 CMS.registerLocale('de', de);
 
 // Previews
-const AnimalPreview = ({ entry, widgetFor }) => (
-  <Container>
-    <div className="pb-32 pt-5">
-      <Animal
-        preview
-        title={entry.getIn(['data', 'title'])}
-        category={entry.getIn(['data', 'category'])}
-        excerpt={entry.getIn(['data', 'excerp'])}
-        image={widgetFor('image')}
-        body={widgetFor('body')}
-      />
-      <hr className="bg-gray-600 my-10" />
-      <div className="max-w-xs">
-        <AnimalCard
-          preview
-          title={entry.getIn(['data', 'title'])}
-          slug={entry.getIn(['data', 'slug'])}
-          category={entry.getIn(['data', 'category'])}
-          excerpt={entry.getIn(['data', 'excerpt'])}
-          image={widgetFor('image')}
-        />
+const AnimalPreview = ({ entry, widgetFor }) => {
+  const animal = {
+    title: entry.getIn(['data', 'title']),
+    category: entry.getIn(['data', 'category']),
+    excerpt: entry.getIn(['data', 'excerpt']),
+  };
+  return (
+    <Container>
+      <div className="pb-32 pt-5">
+        <Animal preview animal={animal} image={widgetFor('image')} body={widgetFor('body')} />
+        <hr className="bg-gray-600 my-10" />
+        <div className="max-w-xs">
+          <AnimalCard preview animal={animal} image={widgetFor('image')} />
+        </div>
       </div>
-    </div>
-  </Container>
-);
-
+    </Container>
+  );
+};
 CMS.registerPreviewTemplate('animal', AnimalPreview);

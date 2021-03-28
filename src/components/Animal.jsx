@@ -2,20 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Hero from './Hero';
 import Seo from './Seo';
-import ImageFluid from '../types/ImageFluid';
+import GatsbyImageData from '../types/GatsbyImageData';
 
-function Animal({ title, image, category, excerpt, body, preview }) {
+function Animal({ animal, image, body, preview }) {
   return (
     <div>
-      {!preview ? <Seo title={title} description={excerpt} image={image.src} /> : null}
+      {!preview ? (
+        <Seo title={animal.title} description={animal.excerpt} image={image.src} />
+      ) : null}
       <div className="mb-6">
-        <Hero image={image} preview={preview} alt={title} />
+        <Hero image={image} preview={preview} alt={animal.title} />
       </div>
       <div className="max-w-xl w-full mx-auto mb-3">
         <div className="text-gray-600 uppercase font-medium leading-tight tracking-tight -mb-2">
-          {category}
+          {animal.category}
         </div>
-        <h2 className="text-5xl font-bold text-gray-800 tracking-tight leading-tight">{title}</h2>
+        <h2 className="text-5xl font-bold text-gray-800 tracking-tight leading-tight">
+          {animal.title}
+        </h2>
       </div>
       <div className="max-w-xl w-full mx-auto mb-40">
         {!preview ? (
@@ -37,11 +41,13 @@ Animal.defaultProps = {
 };
 
 Animal.propTypes = {
-  title: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  excerpt: PropTypes.string.isRequired,
+  animal: PropTypes.shape({
+    title: PropTypes.string,
+    category: PropTypes.string,
+    excerpt: PropTypes.string,
+  }).isRequired,
   body: PropTypes.string.isRequired,
-  image: ImageFluid.isRequired,
+  image: GatsbyImageData.isRequired,
   preview: PropTypes.bool,
 };
 

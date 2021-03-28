@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import ImageFluid from '../types/ImageFluid';
+import GatsbyImageData from '../types/GatsbyImageData';
 
 function Hero({ image, alt, preview }) {
   return (
@@ -22,9 +22,9 @@ Hero.defaultProps = {
 };
 
 Hero.propTypes = {
-  image: ImageFluid.isRequired,
   preview: PropTypes.bool,
   alt: PropTypes.string.isRequired,
+  image: GatsbyImageData.isRequired,
 };
 
 export default Hero;

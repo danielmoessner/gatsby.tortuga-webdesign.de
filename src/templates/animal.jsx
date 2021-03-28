@@ -4,29 +4,24 @@ import PropTypes from 'prop-types';
 import Layout from '../components/Layout';
 import AnimalComponent from '../components/Animal';
 
-function animal({ data }) {
-  const { frontmatter, html } = data.markdownRemark;
-  const image = data.markdownRemark.frontmatter.image.childImageSharp.gatsbyImageData;
+function Page({ data }) {
+  const animal = data.markdownRemark.frontmatter;
+  const image = animal.image.childImageSharp.gatsbyImageData;
+  const { html } = data.markdownRemark;
 
   return (
     <Layout>
-      <AnimalComponent
-        title={frontmatter.title}
-        category={frontmatter.category}
-        excerpt={frontmatter.excerpt}
-        body={html}
-        image={image}
-      />
+      <AnimalComponent animal={animal} body={html} image={image} />
     </Layout>
   );
 }
 
-animal.propTypes = {
+Page.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object.isRequired,
 };
 
-export default animal;
+export default Page;
 
 export const query = graphql`
   query($slug: String!) {
@@ -40,13 +35,6 @@ export const query = graphql`
         title
         image {
           childImageSharp {
-            fluid {
-              aspectRatio
-              base64
-              src
-              sizes
-              srcSet
-            }
             gatsbyImageData
           }
         }

@@ -22,6 +22,9 @@
     "gatsby-transformer-remark": "^2.15.0",
     "gatsby-transformer-sharp": "^2.11.0",
     "gatsby-transformer-yaml": "^2.10.0",
+    "gatsby-transformer-yaml-full": "^0.4.1",
+    "gatsby-transformer-yaml-plus": "^0.2.2",
+    "gatsby-yaml-full-markdown": "^0.4.1",
     "netlify-cms-app": "^2.14.14",
     "netlify-cms-locales": "^1.24.0",
     "postcss": "^8.2.4",
@@ -37,8 +40,9 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "npm-run-all --parallel gatsby cms",
-    "gatsby": "nodemon --exec 'kill-port --port 8000 && gatsby develop' --watch gatsby-node.js --watch package.json --watch gatsby-config.js",
+    "gatsby": "gatsby develop",
     "serve": "gatsby serve",
+    "kill": "kill-port 8000",
     "cms": "npx netlify-cms-proxy-server",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"

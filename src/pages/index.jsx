@@ -8,7 +8,7 @@ import Animate from '../components/Animate';
 
 function index({ data }) {
   const homePage = data.pagesYaml;
-  const animals = data.allMarkdownRemark.edges.map((node) => node.node);
+  const animals = data.allMarkdownRemark.nodes.map((node) => node.frontmatter);
 
   return (
     <Layout>
@@ -21,14 +21,8 @@ function index({ data }) {
         <div className="">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:gap-6">
             {animals.map((animal) => (
-              <Animate key={animal.id}>
-                <AnimalCard
-                  slug={animal.frontmatter.slug}
-                  excerpt={animal.frontmatter.excerpt}
-                  category={animal.frontmatter.category}
-                  title={animal.frontmatter.title}
-                  image={animal.frontmatter.image.childImageSharp.gatsbyImageData}
-                />
+              <Animate key={animal.slug}>
+                <AnimalCard animal={animal} image={animal.image.childImageSharp.gatsbyImageData} />
               </Animate>
             ))}
           </div>
@@ -48,20 +42,17 @@ export default index;
 export const query = graphql`
   {
     allMarkdownRemark(filter: { frontmatter: { collection: { eq: "animal" } } }) {
-      edges {
-        node {
-          frontmatter {
-            slug
-            excerpt
-            category
-            title
-            image {
-              childImageSharp {
-                gatsbyImageData
-              }
+      nodes {
+        frontmatter {
+          slug
+          excerpt
+          category
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData
             }
           }
-          id
         }
       }
     }
