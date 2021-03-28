@@ -1,0 +1,42 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: ''
+webhook_url: 
+sections:
+- type: heading
+  label: Content
+- type: directory
+  path: content/animals
+  label: Animal
+  create: documents
+  match: "*"
+  new_doc_ext: md
+- type: directory
+  path: content/categories
+  label: Category
+  create: documents
+  match: "*"
+  new_doc_ext: md
+- type: heading
+  label: Pages
+- type: document
+  path: content/pages/home.yml
+  label: Index
+- type: heading
+  label: Settings
+- type: document
+  path: content/settings/global.yml
+  label: Global
+upload_dir: content/media
+public_path: content/media
+front_matter_path: "../media"
+use_front_matter_path: true
+file_template: ":filename:"
+build:
+  preview_output_directory: public
+  install_dependencies_command: npm install
+  preview_docker_image: forestryio/node:12
+  mount_path: "/srv"
+  working_dir: "/srv"
+  instant_preview_command: gatsby develop

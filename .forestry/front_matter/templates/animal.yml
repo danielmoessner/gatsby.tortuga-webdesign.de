@@ -1,0 +1,27 @@
+---
+label: Animal
+hide_body: false
+fields:
+- name: category
+  type: include
+  config: {}
+  template: category
+  label: Category
+- type: text
+  name: template
+  label: template
+- type: text
+  name: collection
+  label: collection
+- type: text
+  name: title
+  label: title
+- type: text
+  name: slug
+  label: slug
+- type: file
+  name: image
+  label: image
+- type: textarea
+  name: excerpt
+  label: excerpt
