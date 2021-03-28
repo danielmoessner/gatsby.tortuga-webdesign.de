@@ -6,7 +6,7 @@ import AnimalComponent from '../components/Animal';
 
 function animal({ data }) {
   const { frontmatter, html } = data.markdownRemark;
-  const image = data.markdownRemark.frontmatter.image.childImageSharp.fluid;
+  const image = data.markdownRemark.frontmatter.image.childImageSharp.gatsbyImageData;
 
   return (
     <Layout>
@@ -47,6 +47,7 @@ export const query = graphql`
               sizes
               srcSet
             }
+            gatsbyImageData
           }
         }
       }

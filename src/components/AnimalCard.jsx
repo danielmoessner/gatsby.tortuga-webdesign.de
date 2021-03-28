@@ -1,7 +1,7 @@
 import React from 'react';
-import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import ImageFluid from '../types/ImageFluid';
 
 function AnimalCard({ title, slug, image, category, excerpt, preview }) {
@@ -10,12 +10,7 @@ function AnimalCard({ title, slug, image, category, excerpt, preview }) {
       <div className="shadow rounded-lg">
         <Link className={!preview ? 'block aspect-w-16 aspect-h-10' : ''} to={`wildtiere/${slug}`}>
           {!preview ? (
-            <Img
-              alt={title}
-              className="rounded-lg"
-              style={{ position: 'absolute' }}
-              fluid={image}
-            />
+            <GatsbyImage className="rounded-lg" image={image} />
           ) : (
             <div className="rounded-lg overflow-hidden">{image}</div>
           )}

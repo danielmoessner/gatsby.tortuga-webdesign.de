@@ -1,14 +1,14 @@
 import React from 'react';
-import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import ImageFluid from '../types/ImageFluid';
 
 function Hero({ image, alt, preview }) {
   return (
     <section className="w-full">
-      <div className="shadow rounded-lg">
+      <div className="">
         {!preview ? (
-          <Img className="rounded-lg" fluid={image} alt={alt} />
+          <GatsbyImage className="shadow rounded-lg" image={image} alt={alt} />
         ) : (
           <div className="rounded-lg overflow-hidden">{image}</div>
         )}

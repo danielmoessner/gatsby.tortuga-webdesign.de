@@ -27,7 +27,7 @@ function index({ data }) {
                   excerpt={animal.frontmatter.excerpt}
                   category={animal.frontmatter.category}
                   title={animal.frontmatter.title}
-                  image={animal.frontmatter.image.childImageSharp.fluid}
+                  image={animal.frontmatter.image.childImageSharp.gatsbyImageData}
                 />
               </Animate>
             ))}
@@ -57,13 +57,7 @@ export const query = graphql`
             title
             image {
               childImageSharp {
-                fluid {
-                  aspectRatio
-                  base64
-                  sizes
-                  src
-                  srcSet
-                }
+                gatsbyImageData
               }
             }
           }
