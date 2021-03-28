@@ -1,16 +1,16 @@
 import React from 'react';
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Container from './Container';
 
 function Layout({ children }) {
-  const data = useStaticQuery(graphql`
-    {
-      settingsYaml {
-        navigationTitle
-      }
-    }
-  `).settingsYaml;
+  // const data = useStaticQuery(graphql`
+  //   {
+  //     settingsYaml {
+  //       navigationTitle
+  //     }
+  //   }
+  // `).settingsYaml;
 
   return (
     <div>
@@ -19,7 +19,7 @@ function Layout({ children }) {
           <div className="flex justify-between">
             <Link to="/">
               <h1 className="text-3xl font-bold tracking-tight leading-tight text-gray-700 hover:text-gray-800 transition ease-in-out duration-150">
-                {data.navigationTitle}
+                Wildtiere in Deutschland
               </h1>
             </Link>
           </div>
