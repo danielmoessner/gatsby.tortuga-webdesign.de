@@ -1,5 +1,6 @@
 const typography = require('@tailwindcss/typography');
 const aspectRatio = require('@tailwindcss/aspect-ratio');
+const lineClamp = require('@tailwindcss/line-clamp');
 
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -10,5 +11,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [typography, aspectRatio],
+  plugins: [typography, aspectRatio, lineClamp],
 };

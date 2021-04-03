@@ -6,9 +6,9 @@ import GatsbyImageData from '../types/GatsbyImageData';
 function Hero({ image, alt, preview }) {
   return (
     <section className="w-full">
-      <div className="">
+      <div className="flex">
         {!preview ? (
-          <GatsbyImage className="shadow rounded-lg" image={image} alt={alt} />
+          <GatsbyImage className="shadow rounded-lg mx-auto" image={image} alt={alt} />
         ) : (
           <div className="rounded-lg overflow-hidden">{image}</div>
         )}

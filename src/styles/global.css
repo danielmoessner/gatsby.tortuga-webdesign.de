@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 @import '~animate.css/animate.min.css';
+
+.transition-animate {
+  display: block !important;
+}

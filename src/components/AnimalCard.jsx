@@ -29,7 +29,7 @@ function AnimalCard({ animal, image, preview }) {
           </h2>
         </Link>
         <Link to={`wildtiere/${animal.slug}`}>
-          <p className="text-sm leading-tight text-gray-900">{animal.excerpt}</p>
+          <p className="text-sm leading-tight text-gray-900 line-clamp-3">{animal.excerpt}</p>
         </Link>
       </div>
     </div>
