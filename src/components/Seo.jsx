@@ -1,26 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
 
 function SEO({ url, title, description, image, isBlogPost }) {
-  const data = useStaticQuery(
-    graphql`
-      query Favicon {
-        settingsYaml(slug: { eq: "global" }) {
-          favicon {
-            childImageSharp {
-              resize(width: 256, height: 256, cropFocus: CENTER) {
-                src
-              }
-            }
-          }
-        }
-      }
-    `
-  );
-  const favicon = data.settingsYaml.favicon.childImageSharp.resize.src;
-
   return (
     <Helmet htmlAttributes={{ lang: 'de' }}>
       {/* General tags */}
@@ -43,8 +26,36 @@ function SEO({ url, title, description, image, isBlogPost }) {
       {image ? <meta name="twitter:image" content={image} /> : null}
 
       {/* Different Favicons */}
-      <link rel="icon" type="image/png" href={favicon} sizes="256x256" />
-      <link rel="apple-touch-icon" sizes="256x256" href={favicon} />
+      <StaticQuery
+        query={graphql`
+          query Favicon {
+            settingsYaml(slug: { eq: "global" }) {
+              favicon {
+                childImageSharp {
+                  resize(width: 256, height: 256, cropFocus: CENTER) {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={(data) => (
+          <>
+            <link
+              rel="icon"
+              type="image/png"
+              href={data.settingsYaml.favicon.childImageSharp.resize.src}
+              sizes="256x256"
+            />
+            <link
+              rel="apple-touch-icon"
+              sizes="256x256"
+              href={data.settingsYaml.favicon.childImageSharp.resize.src}
+            />
+          </>
+        )}
+      />
     </Helmet>
   );
 }

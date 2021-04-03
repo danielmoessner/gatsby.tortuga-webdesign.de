@@ -1,4 +1,1 @@
-- tailwind forms einbinden
-- tailwind leading zeilen einbinden
-- packages updaten
 - vllt tailwind css jit einbinden

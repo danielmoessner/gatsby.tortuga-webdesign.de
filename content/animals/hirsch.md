@@ -1,9 +1,10 @@
 ---
 collection: animal
 title: Hirsch
-image: ../media/deer.jpg
-excerpt: hirsch
-category: Säugetiere
 slug: hirsch
+image: ../media/deer.jpg
+excerpt: Die Hirsche (Cervidae) oder Geweihträger sind eine Säugetierfamilie aus
+  der Ordnung der Paarhufer (Artiodactyla).
+category: Säugetiere
 ---
-hirsch
+Die **Hirsche** (Cervidae) oder **Geweihträger** sind eine [Säugetierfamilie](https://de.wikipedia.org/wiki/S%C3%A4ugetier "Säugetier") aus der Ordnung der [Paarhufer](https://de.wikipedia.org/wiki/Paarhufer "Paarhufer") (Artiodactyla). Die Familie umfasst mehr als 80 Arten, von denen unter anderem der [Rothirsch](https://de.wikipedia.org/wiki/Rothirsch "Rothirsch"), der [Damhirsch](https://de.wikipedia.org/wiki/Damhirsch "Damhirsch"), das [Reh](https://de.wikipedia.org/wiki/Reh "Reh"), das [Ren](https://de.wikipedia.org/wiki/Ren "Ren") und der [Elch](https://de.wikipedia.org/wiki/Elch "Elch") auch in [Europa](https://de.wikipedia.org/wiki/Europa "Europa") verbreitet sind. Darüber hinaus kommen Hirsche in [Asien](https://de.wikipedia.org/wiki/Asien "Asien"), [Nord-](https://de.wikipedia.org/wiki/Nordamerika "Nordamerika") und [Südamerika](https://de.wikipedia.org/wiki/S%C3%BCdamerika "Südamerika") und mit einem Vertreter in [Afrika](https://de.wikipedia.org/wiki/Afrika "Afrika") vor. Markantestes Kennzeichen der Hirsche sind die an Gestalt variantenreichen, meist nur von den Männchen getragenen [Geweihe](https://de.wikipedia.org/wiki/Geweih "Geweih"), die jährlich abgeworfen und neu gebildet werden. Die hauptsächliche Nahrung der Tiere besteht aus Pflanzen, wobei weiche und harte Pflanzenteile im unterschiedlichen Maß konsumiert werden. Reine Grasfresser wie bei den [Hornträgern](https://de.wikipedia.org/wiki/Horntr%C3%A4ger "Hornträger") kommen bei den Hirschen aber nicht vor, was mit der Ausbildung des Geweihs zusammenhängt. Das Sozialverhalten der Tiere ist sehr unterschiedlich und reicht von einzelgängerischen Individuen bis zur Bildung großer, weit umherwandernder Herden. Die Fortpflanzungsphase ist von charakteristischen Dominanzkämpfen geprägt.

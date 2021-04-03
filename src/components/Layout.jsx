@@ -1,17 +1,9 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link, StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Container from './Container';
 
 function Layout({ children }) {
-  const data = useStaticQuery(graphql`
-    {
-      settingsYaml {
-        navigationTitle
-      }
-    }
-  `).settingsYaml;
-
   return (
     <div>
       <Container>
@@ -19,7 +11,16 @@ function Layout({ children }) {
           <div className="flex justify-between">
             <Link to="/">
               <h1 className="text-3xl font-bold tracking-tight leading-tight text-gray-700 hover:text-gray-800 transition ease-in-out duration-150">
-                {data.navigationTitle}
+                <StaticQuery
+                  query={graphql`
+                    {
+                      settingsYaml {
+                        navigationTitle
+                      }
+                    }
+                  `}
+                  render={(data) => data.settingsYaml.navigationTitle}
+                />
               </h1>
             </Link>
           </div>

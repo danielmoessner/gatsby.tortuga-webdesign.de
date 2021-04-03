@@ -2,7 +2,7 @@
 collection: animal
 title: Ziege
 slug: ziege
-image: ../media/800px-steinbock_2006_08_2.jpg
+image: ../media/muhammed-zafer-yahsi-pj58s1hdmzo-unsplash.jpg
 excerpt: Die Ziegen (Capra) sind eine Gattung der Hornträger (Bovidae). Sie sind
   Wiederkäuer (Ruminantia) und Paarhufer (Artiodactyla).
 category: Säugetiere
