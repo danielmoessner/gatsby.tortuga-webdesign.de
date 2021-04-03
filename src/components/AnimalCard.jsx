@@ -13,7 +13,12 @@ function AnimalCard({ animal, image, preview }) {
           to={`wildtiere/${animal.slug}`}
         >
           {!preview ? (
-            <GatsbyImage className="rounded-lg" image={image} alt={animal.title} />
+            <GatsbyImage
+              style={{ position: 'absolute' }}
+              className="rounded-lg"
+              image={image}
+              alt={animal.title}
+            />
           ) : (
             <div className="rounded-lg overflow-hidden">{image}</div>
           )}
