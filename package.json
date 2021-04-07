@@ -4,6 +4,19 @@
   "license": "UNLICENSED",
   "private": true,
   "version": "0.0.0",
+  "main": "npm run dev",
+  "browserslist": "defaults",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "npm-run-all --parallel gatsby cms",
+    "gatsby": "gatsby develop",
+    "serve": "gatsby serve",
+    "kill": "kill-port 8000",
+    "cms": "npx netlify-cms-proxy-server",
+    "update": "npx npm-check-updates -u --timeout 60000 && npm install",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "@headlessui/react": "^0.3.2",
     "@tailwindcss/aspect-ratio": "^0.2.0",
@@ -26,8 +39,8 @@
     "gatsby-transformer-remark": "^3.2.0",
     "gatsby-transformer-sharp": "^3.2.0",
     "gatsby-transformer-yaml": "^3.2.0",
-    "netlify-cms-app": "^2.14.35",
-    "netlify-cms-locales": "^1.29.1",
+    "netlify-cms-app": "^2.14.40",
+    "netlify-cms-locales": "^1.29.2",
     "postcss": "^8.2.9",
     "postcss-loader": "^5.2.0",
     "postcss-preset-env": "^6.7.0",
@@ -35,21 +48,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "tailwindcss": "^2.0.4"
-  },
-  "main": "npm run dev",
-  "scripts": {
-    "build": "gatsby build",
-    "dev": "npm-run-all --parallel gatsby cms",
-    "gatsby": "gatsby develop",
-    "serve": "gatsby serve",
-    "kill": "kill-port 8000",
-    "cms": "npx netlify-cms-proxy-server",
-    "update": "npx npm-check-updates -u && npm install",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
+    "tailwindcss": "^2.1.1",
     "eslint": "^7.23.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
@@ -60,6 +59,5 @@
     "kill-port": "^1.6.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1"
-  },
-  "browserslist": "defaults"
+  }
 }
