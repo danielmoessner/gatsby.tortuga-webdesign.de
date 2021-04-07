@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: 'https://gatsby-netlifycms.tortuga-webdesign.de',
+  },
   plugins: [
     'gatsby-plugin-eslint',
     'gatsby-plugin-react-helmet',
