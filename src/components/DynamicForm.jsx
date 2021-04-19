@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import DynamicInput, { InputProps } from './DynamicInput';
@@ -16,27 +16,39 @@ function Component({
   successHeading,
 }) {
   const [enabled, setEnabled] = useState(false);
+  const form = useRef(null);
   const formSent = location.hash === '#erfolgreich-abgeschickt';
   const action = `${location.pathname}#erfolgreich-abgeschickt`;
 
-  // let gatsbyFetch = () => {};
-  // let GatsbyFormData = () => {};
-
-  // useEffect(() => {
-  //   GatsbyFormData = FormData;
-  //   gatsbyFetch = fetch;
-  // }, []);
+  useEffect(() => {
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      // eslint-disable-next-line no-undef
+      const formData = new FormData(form.current);
+      // eslint-disable-next-line no-undef
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => console.log('Form successfully submitted'))
+        .catch((error) => console.log('Form error', error));
+    };
+    // eslint-disable-next-line no-undef
+    document.querySelector(`#${name}`).addEventListener('submit', handleSubmit);
+  }, []);
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
-  //   // eslint-disable-next-line no-undef
-  //   const myForm = document.getElementById('pizzaOrder');
+  //   const myForm = gatsbyDocument.getElementById('pizzaOrder');
   //   const formData = new GatsbyFormData(myForm);
-  //   gatsbyFetch(action, {
+  //   gatsbyFetch('/', {
   //     method: 'POST',
   //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
   //     body: new URLSearchParams(formData).toString(),
-  //   }).then(() => console.log('Form successfully submitted'));
+  //   })
+  //     .then(() => console.log('Form successfully submitted'))
+  //     .catch((error) => console.log('Form error', error));
   // };
 
   return (
@@ -50,9 +62,11 @@ function Component({
 
       <form
         name={name}
-        method={method}
+        id={name}
+        // method={method}
+        ref={form}
         data-netlify={netlify}
-        action={action}
+        // action={action}
         className={`${
           formSent ? 'hidden' : 'block'
         } grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8`}
