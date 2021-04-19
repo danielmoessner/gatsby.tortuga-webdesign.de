@@ -19,6 +19,26 @@ function Component({
   const formSent = location.hash === '#erfolgreich-abgeschickt';
   const action = `${location.pathname}#erfolgreich-abgeschickt`;
 
+  // let gatsbyFetch = () => {};
+  // let GatsbyFormData = () => {};
+
+  // useEffect(() => {
+  //   GatsbyFormData = FormData;
+  //   gatsbyFetch = fetch;
+  // }, []);
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // eslint-disable-next-line no-undef
+  //   const myForm = document.getElementById('pizzaOrder');
+  //   const formData = new GatsbyFormData(myForm);
+  //   gatsbyFetch(action, {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //     body: new URLSearchParams(formData).toString(),
+  //   }).then(() => console.log('Form successfully submitted'));
+  // };
+
   return (
     <div className="max-w-xl">
       <div className={`${formSent ? 'block' : 'hidden'} pt-24`} id="erfolgreich abgeschickt">
@@ -94,7 +114,7 @@ function Component({
 Component.defaultProps = {
   name: 'standardformular',
   netlify: true,
-  method: 'POST',
+  method: 'GET',
   dataProtectionText:
     'Ich stimme zu, dass meine Daten zum Bearbeiten dieser Anfrage vorrübergehen gespeichert werden.',
   successHeading: 'Vielen Dank',
