@@ -1,0 +1,15 @@
+{
+    "eslint.validate": ["vue", "javascript", "typescript"],
+    "eslint.packageManager": "npm",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "css.validate": false,
+    "tailwindCSS.emmetCompletions": true,
+    "editor.tabSize": 2
+}

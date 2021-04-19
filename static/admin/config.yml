@@ -47,6 +47,22 @@ collections:
                 widget: text
               - { label: Bild, name: image, widget: image }
 
+      - file: content/pages/styleguide.yml
+        label: Styleguide
+        name: styleguide
+        fields:
+          - { label: Sammlung, name: collection, widget: hidden, default: page }
+          - { label: Slug, name: slug, widget: hidden, default: styleguide }
+          - label: 'Meta'
+            name: 'meta'
+            widget: 'object'
+            fields:
+              - { label: Titel, name: title, widget: string }
+              - label: Beschreibung
+                name: description
+                widget: text
+              - { label: Bild, name: image, widget: image }
+
   - name: animal
     label: Wildtiere
     label_singular: Wildtier

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import Container from './Container';
+import ChildrenData from '../types/ChildrenData';
 
 function Layout({ children }) {
   return (
     <div>
       <Container>
         <header className="pb-3 pt-5">
-          <div className="flex justify-between">
+          <div className="flex justify-between border-b pb-3">
             <Link to="/">
               <h1 className="text-3xl font-bold tracking-tight leading-tight text-gray-700 hover:text-gray-800 transition ease-in-out duration-150">
                 <StaticQuery
@@ -34,7 +34,7 @@ function Layout({ children }) {
 }
 
 Layout.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: ChildrenData.isRequired,
 };
 
 export default Layout;
