@@ -1,24 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 import DynamicInput, { InputProps } from './DynamicInput';
 import Button from './Button';
 import Heading from './Heading';
 
-function Component({
-  fields,
-  method,
-  dataProtectionText,
-  name,
-  netlify,
-  location,
-  successText,
-  successHeading,
-}) {
+function Component({ fields, dataProtectionText, name, netlify, successText, successHeading }) {
   const [enabled, setEnabled] = useState(false);
+  const [formSent, setFormSent] = useState(false);
   const form = useRef(null);
-  const formSent = location.hash === '#erfolgreich-abgeschickt';
-  const action = `${location.pathname}#erfolgreich-abgeschickt`;
 
   useEffect(() => {
     const handleSubmit = (e) => {
@@ -31,25 +20,15 @@ function Component({
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString(),
       })
-        .then(() => console.log('Form successfully submitted'))
-        .catch((error) => console.log('Form error', error));
+        .then(() => setFormSent(true))
+        .catch((error) => {
+          // eslint-disable-next-line
+          console.log('Form error', error)
+        });
     };
     // eslint-disable-next-line no-undef
     document.querySelector(`#${name}`).addEventListener('submit', handleSubmit);
   }, []);
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const myForm = gatsbyDocument.getElementById('pizzaOrder');
-  //   const formData = new GatsbyFormData(myForm);
-  //   gatsbyFetch('/', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //     body: new URLSearchParams(formData).toString(),
-  //   })
-  //     .then(() => console.log('Form successfully submitted'))
-  //     .catch((error) => console.log('Form error', error));
-  // };
 
   return (
     <div className="max-w-xl">
@@ -71,7 +50,7 @@ function Component({
           formSent ? 'hidden' : 'block'
         } grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8`}
       >
-        {netlify && <input type="hidden" name="form-name" value={netlify} />}
+        {netlify && <input type="hidden" name="form-name" value={name} />}
 
         {fields.map((field) => (
           // eslint-disable-next-line
@@ -116,9 +95,6 @@ function Component({
           <Button element="button" type="submit">
             Absenden
           </Button>
-          <Link to={action} className="sr-only">
-            Link
-          </Link>
         </div>
       </form>
     </div>
@@ -143,8 +119,6 @@ Component.propTypes = {
   netlify: PropTypes.bool,
   successHeading: PropTypes.string,
   successText: PropTypes.string,
-  // eslint-disable-next-line
-  location: PropTypes.object.isRequired,
 };
 
 export default Component;

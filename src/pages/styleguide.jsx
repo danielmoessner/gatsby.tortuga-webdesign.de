@@ -10,7 +10,7 @@ import Heading from '../components/Heading';
 import Button from '../components/Button';
 import DynamicForm from '../components/DynamicForm';
 
-function Page({ data, location }) {
+function Page({ data }) {
   const page = data.pagesYaml;
 
   const headingText = 'Lorem ipsum dolor sit';
@@ -142,7 +142,7 @@ function Page({ data, location }) {
         <div className="">
           <Pre element="h2">Formulare</Pre>
           <div className="mt-8 space-y-8">
-            <DynamicForm location={location} fields={fields} />
+            <DynamicForm fields={fields} />
           </div>
         </div>
       </div>
@@ -153,8 +153,6 @@ function Page({ data, location }) {
 Page.propTypes = {
   // eslint-disable-next-line
   data: PropTypes.object.isRequired,
-  // eslint-disable-next-line
-  location: PropTypes.object.isRequired
 };
 
 export default Page;
