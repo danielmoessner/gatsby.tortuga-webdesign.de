@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import DynamicInput, { InputProps } from './DynamicInput';
 import Button from './Button';
 import Heading from './Heading';
@@ -7,7 +8,6 @@ import Heading from './Heading';
 function Component({
   fields,
   method,
-  action,
   dataProtectionText,
   name,
   netlify,
@@ -17,6 +17,7 @@ function Component({
 }) {
   const [enabled, setEnabled] = useState(false);
   const formSent = location.hash === '#erfolgreich-abgeschickt';
+  const action = `${location.pathname}#erfolgreich-abgeschickt`;
 
   return (
     <div className="max-w-xl">
@@ -81,6 +82,9 @@ function Component({
           <Button element="button" type="submit">
             Absenden
           </Button>
+          <Link to={action} className="sr-only">
+            Link
+          </Link>
         </div>
       </form>
     </div>
@@ -91,7 +95,6 @@ Component.defaultProps = {
   name: 'standardformular',
   netlify: true,
   method: 'POST',
-  action: '#erfolgreich-abgeschickt',
   dataProtectionText:
     'Ich stimme zu, dass meine Daten zum Bearbeiten dieser Anfrage vorrübergehen gespeichert werden.',
   successHeading: 'Vielen Dank',
@@ -99,7 +102,6 @@ Component.defaultProps = {
 };
 
 Component.propTypes = {
-  action: PropTypes.string,
   method: PropTypes.oneOf(['POST', 'GET']),
   fields: PropTypes.arrayOf(PropTypes.shape(InputProps)).isRequired,
   dataProtectionText: PropTypes.string,
