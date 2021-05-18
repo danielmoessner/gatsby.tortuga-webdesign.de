@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import Layout from "../components/Layout";
 import AnimalComponent from "../components/Animal";
+import Container from "../components/Container";
 
 function Page({ data }) {
   const animal = data.markdownRemark.frontmatter;
@@ -11,7 +12,11 @@ function Page({ data }) {
 
   return (
     <Layout>
-      <AnimalComponent animal={animal} body={html} image={image} />
+      <section className="pt-5">
+        <Container layout="sm">
+          <AnimalComponent animal={animal} body={html} image={image} />
+        </Container>
+      </section>
     </Layout>
   );
 }

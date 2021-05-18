@@ -57,3 +57,32 @@ SEO.propTypes = {
 };
 
 export default SEO;
+
+export const metaFragment = graphql`
+  fragment meta on PageYaml {
+    meta {
+      image {
+        childImageSharp {
+          resize(width: 1200) {
+            src
+          }
+        }
+      }
+      title
+      description
+    }
+  }
+  fragment metaMarkdown on MarkdownRemarkFrontmatter {
+    meta {
+      image {
+        childImageSharp {
+          resize(width: 1200) {
+            src
+          }
+        }
+      }
+      title
+      description
+    }
+  }
+`;

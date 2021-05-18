@@ -160,17 +160,7 @@ export default Page;
 export const query = graphql`
   {
     pageYaml(slug: { eq: "styleguide" }) {
-      meta {
-        image {
-          childImageSharp {
-            resize(width: 1200) {
-              src
-            }
-          }
-        }
-        description
-        title
-      }
+      ...meta
     }
   }
 `;

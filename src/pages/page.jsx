@@ -3,13 +3,16 @@ import React from "react";
 // import PropTypes from 'prop-types';
 // import { Link, graphql } from 'gatsby';
 // import { Transition } from '@headlessui/react';
-// import Container from '../components/Container';
+import Container from "../components/Container";
+import Layout from "../components/Layout";
 
 function Page() {
   return (
-    <div>
-      <div>Page</div>
-    </div>
+    <Layout>
+      <Container>
+        <div>Page test </div>
+      </Container>
+    </Layout>
   );
 }
 
