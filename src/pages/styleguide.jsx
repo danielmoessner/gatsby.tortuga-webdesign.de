@@ -11,7 +11,7 @@ import Button from "../components/Button";
 import DynamicForm from "../components/DynamicForm";
 
 function Page({ data }) {
-  const page = data.pagesYaml;
+  const page = data.pageYaml;
 
   const headingText = "Lorem ipsum dolor sit";
 
@@ -159,7 +159,7 @@ export default Page;
 
 export const query = graphql`
   {
-    pagesYaml(slug: { eq: "styleguide" }) {
+    pageYaml(slug: { eq: "styleguide" }) {
       meta {
         image {
           childImageSharp {

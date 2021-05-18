@@ -36,6 +36,7 @@ module.exports = {
       options: {
         modulePath: `${__dirname}/src/cms/cms.jsx`,
         enableIdentityWidget: true,
+        manualInit: true,
         htmlTitle: "CMS",
         htmlFavicon: `${__dirname}/static/images/favicon.svg`,
       },

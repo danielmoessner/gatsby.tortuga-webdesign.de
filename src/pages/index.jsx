@@ -8,7 +8,7 @@ import Seo from "../components/Seo";
 import Animate from "../components/AnimateNew2";
 
 function index({ data }) {
-  const homePage = data.pagesYaml;
+  const homePage = data.pageYaml;
   const animals = data.allMarkdownRemark.nodes.map((node) => node.frontmatter);
 
   return (
@@ -57,7 +57,7 @@ export const query = graphql`
         }
       }
     }
-    pagesYaml(slug: { eq: "home" }) {
+    pageYaml(slug: { eq: "home" }) {
       meta {
         image {
           childImageSharp {

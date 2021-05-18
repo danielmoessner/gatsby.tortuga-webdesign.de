@@ -14,12 +14,12 @@ function Layout({ children }) {
                 <StaticQuery
                   query={graphql`
                     {
-                      settingsYaml {
+                      settingYaml {
                         navigationTitle
                       }
                     }
                   `}
-                  render={(data) => data.settingsYaml.navigationTitle}
+                  render={(data) => data.settingYaml.navigationTitle}
                 />
               </h1>
             </Link>

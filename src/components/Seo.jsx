@@ -7,7 +7,7 @@ function SEO({ title, description, image }) {
   const data = useStaticQuery(
     graphql`
       query Favicon {
-        settingsYaml(slug: { eq: "global" }) {
+        settingYaml(slug: { eq: "global" }) {
           favicon {
             childImageSharp {
               resize(width: 256, height: 256, cropFocus: CENTER) {
@@ -19,7 +19,7 @@ function SEO({ title, description, image }) {
       }
     `
   );
-  const favicon = data.settingsYaml.favicon.childImageSharp.resize.src;
+  const favicon = data.settingYaml.favicon.childImageSharp.resize.src;
 
   return (
     <Helmet htmlAttributes={{ lang: "de" }}>

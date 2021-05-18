@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 import CMS, { init } from "netlify-cms-app";
 import { de } from "netlify-cms-locales";
 import React from "react";
@@ -7,47 +6,45 @@ import Animal from "../components/Animal";
 import AnimalCard from "../components/AnimalCard";
 import Container from "../components/Container";
 import "../styles/global.css";
+import page from "./page/index";
+import animal from "./animal/index";
+import category from "./category/index";
+import setting from "./setting/index";
 
-// Localization
+// See https://www.netlifycms.org/docs/configuration-options/#locale
 CMS.registerLocale("de", de);
 
-/**
- * Optionally pass in a complete config object and set a flag
- *  (`load_config_file: false`) to ignore the `config.yml`.
- *
- * For example, the code below contains a complete config. The
- * `config.yml` will be ignored when setting `load_config_file` to false.
- * It is not required if the `config.yml` file is missing to set
- * `load_config_file`, but will improve performance and avoid a load error.
- */
+// See https://www.netlifycms.org/docs/beta-features/#manual-initialization
 init({
   config: {
+    // See https://www.netlifycms.org/docs/configuration-options/#backend
     backend: {
       name: "git-gateway",
+      branch: "main",
+      repo: "danielmoessner/gatsby-netlifycms.tortuga-webdesign.de",
     },
+    // See https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
+    local_backend: true,
+    // See https://www.netlifycms.org/docs/configuration-options/#locale
+    locale: "de",
+    // See https://www.netlifycms.org/docs/configuration-options/#display-url
+    display_url: "https://gatsby-netlifycms.tortuga-webdesign.de",
+    // See https://www.netlifycms.org/docs/configuration-options/#site-url
+    site_url: "https://gatsby-netlifycms.tortuga-webdesign.de",
+    // See https://www.netlifycms.org/docs/configuration-options/#media-folder
+    media_folder: "/content/media",
+    // See https://www.netlifycms.org/docs/configuration-options/#public-folder
+    public_folder: "../media",
+    // See https://www.netlifycms.org/docs/beta-features/#manual-initialization
     load_config_file: false,
-    media_folder: "static/images/uploads",
-    public_folder: "/images/uploads",
-    collections: [
-      {
-        label: "Blog",
-        name: "blog",
-        folder: "_posts/blog",
-        create: true,
-        fields: [
-          { label: "Title", name: "title", widget: "string" },
-          { label: "Publish Date", name: "date", widget: "datetime" },
-          { label: "Featured Image", name: "thumbnail", widget: "image" },
-          { label: "Body", name: "body", widget: "markdown" },
-        ],
-      },
-    ],
+    // See https://www.netlifycms.org/docs/collection-types/
+    collections: [page, animal, category, setting],
   },
 });
 
 // Previews
 const AnimalPreview = ({ entry, widgetFor }) => {
-  const animal = {
+  const animalData = {
     title: entry.getIn(["data", "title"]),
     category: entry.getIn(["data", "category"]),
     excerpt: entry.getIn(["data", "excerpt"]),
@@ -55,10 +52,10 @@ const AnimalPreview = ({ entry, widgetFor }) => {
   return (
     <Container>
       <div className="pb-32 pt-5">
-        <Animal preview animal={animal} image={widgetFor("image")} body={widgetFor("body")} />
+        <Animal preview animal={animalData} image={widgetFor("image")} body={widgetFor("body")} />
         <hr className="bg-gray-600 my-10" />
         <div className="max-w-xs">
-          <AnimalCard preview animal={animal} image={widgetFor("image")} />
+          <AnimalCard preview animal={animalData} image={widgetFor("image")} />
         </div>
       </div>
     </Container>
