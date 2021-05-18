@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const GatsbyImageData = PropTypes.shape({
   layout: PropTypes.string.isRequired,

@@ -1,20 +1,20 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import GatsbyImageData from '../types/GatsbyImageData';
+import React from "react";
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import { GatsbyImage } from "gatsby-plugin-image";
+import GatsbyImageData from "../types/GatsbyImageData";
 
 function AnimalCard({ animal, image, preview }) {
   return (
     <div>
       <div className="shadow rounded-lg">
         <Link
-          className={!preview ? 'block aspect-w-16 aspect-h-10' : ''}
+          className={!preview ? "block aspect-w-16 aspect-h-10" : ""}
           to={`wildtiere/${animal.slug}`}
         >
           {!preview ? (
             <GatsbyImage
-              style={{ position: 'absolute' }}
+              style={{ position: "absolute" }}
               className="rounded-lg"
               image={image}
               alt={animal.title}

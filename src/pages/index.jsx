@@ -1,11 +1,11 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import Layout from '../components/Layout';
-import AnimalCard from '../components/AnimalCard';
-import Seo from '../components/Seo';
+import React from "react";
+import { graphql } from "gatsby";
+import PropTypes from "prop-types";
+import Layout from "../components/Layout";
+import AnimalCard from "../components/AnimalCard";
+import Seo from "../components/Seo";
 // import Animate from '../components/Animate';
-import Animate from '../components/AnimateNew2';
+import Animate from "../components/AnimateNew2";
 
 function index({ data }) {
   const homePage = data.pagesYaml;

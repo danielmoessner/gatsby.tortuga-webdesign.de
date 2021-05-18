@@ -1,3 +1,3 @@
-import sanitizeHtml from 'sanitize-html';
+import sanitizeHtml from "sanitize-html";
 
-export default (text) => sanitizeHtml(text.replace(/\n/g, '<br />'));
+export default (text) => sanitizeHtml(text.replace(/\n/g, "<br />"));

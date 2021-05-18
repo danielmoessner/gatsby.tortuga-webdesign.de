@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 function Animate({ children }) {
   return (
-    <div data-sal="slide-up" data-sal-easing="ease" style={{ '--sal-duration': '500ms' }}>
+    <div data-sal="slide-up" data-sal-easing="ease" style={{ "--sal-duration": "500ms" }}>
       {children}
     </div>
   );

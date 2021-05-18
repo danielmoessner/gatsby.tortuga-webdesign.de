@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Hero from './Hero';
-import Seo from './Seo';
-import GatsbyImageData from '../types/GatsbyImageData';
+import React from "react";
+import PropTypes from "prop-types";
+import Hero from "./Hero";
+import Seo from "./Seo";
+import GatsbyImageData from "../types/GatsbyImageData";
 
 function Animal({ animal, image, body, preview }) {
   return (

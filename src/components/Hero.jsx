@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import GatsbyImageData from '../types/GatsbyImageData';
+import React from "react";
+import PropTypes from "prop-types";
+import { GatsbyImage } from "gatsby-plugin-image";
+import GatsbyImageData from "../types/GatsbyImageData";
 
 function Hero({ image, alt, preview }) {
   return (

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import Container from '../components/Container';
-import Seo from '../components/Seo';
+import React from "react";
+import { Link } from "gatsby";
+import Container from "../components/Container";
+import Seo from "../components/Seo";
 
 export default function error() {
   return (

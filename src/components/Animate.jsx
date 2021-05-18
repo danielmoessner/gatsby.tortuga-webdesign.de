@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React, { useRef, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef, useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 function Animate({ animateClass, children }) {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -16,16 +16,16 @@ function Animate({ animateClass, children }) {
       },
       {
         threshold: 0.01,
-        rootMargin: '0px 0px -10% 0px',
+        rootMargin: "0px 0px -10% 0px",
       }
     );
     if (ref.current) observer.observe(ref.current);
 
     const setIsLoadedTrue = () => setIsLoaded(true);
     // eslint-disable-next-line no-undef
-    if (!isLoaded) document.addEventListener('scroll', setIsLoadedTrue);
+    if (!isLoaded) document.addEventListener("scroll", setIsLoadedTrue);
     // eslint-disable-next-line no-undef
-    else document.removeEventListener('scroll', setIsLoadedTrue);
+    else document.removeEventListener("scroll", setIsLoadedTrue);
 
     // Remove the observer as soon as the component is unmounted
     return () => {
@@ -36,7 +36,7 @@ function Animate({ animateClass, children }) {
   return (
     <div ref={ref}>
       <div
-        className={isIntersecting ? `animate__animated animate__fast ${animateClass}` : 'opacity-0'}
+        className={isIntersecting ? `animate__animated animate__fast ${animateClass}` : "opacity-0"}
       >
         {children}
       </div>
@@ -45,7 +45,7 @@ function Animate({ animateClass, children }) {
 }
 
 Animate.defaultProps = {
-  animateClass: 'animate__fadeInUp',
+  animateClass: "animate__fadeInUp",
 };
 
 Animate.propTypes = {

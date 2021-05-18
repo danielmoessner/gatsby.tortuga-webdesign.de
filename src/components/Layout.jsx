@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link, StaticQuery, graphql } from 'gatsby';
-import Container from './Container';
-import ChildrenData from '../types/ChildrenData';
+import React from "react";
+import { Link, StaticQuery, graphql } from "gatsby";
+import Container from "./Container";
+import ChildrenData from "../types/ChildrenData";
 
 function Layout({ children }) {
   return (

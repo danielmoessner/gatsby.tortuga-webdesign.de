@@ -1,42 +1,42 @@
-import { graphql } from 'gatsby';
-import React from 'react';
-import PropTypes from 'prop-types';
+import { graphql } from "gatsby";
+import React from "react";
+import PropTypes from "prop-types";
 // import { Link, graphql } from 'gatsby';
 // import { Transition } from '@headlessui/react';
-import Seo from '../components/Seo';
-import Layout from '../components/Layout';
-import Pre from '../components/Pre';
-import Heading from '../components/Heading';
-import Button from '../components/Button';
-import DynamicForm from '../components/DynamicForm';
+import Seo from "../components/Seo";
+import Layout from "../components/Layout";
+import Pre from "../components/Pre";
+import Heading from "../components/Heading";
+import Button from "../components/Button";
+import DynamicForm from "../components/DynamicForm";
 
 function Page({ data }) {
   const page = data.pagesYaml;
 
-  const headingText = 'Lorem ipsum dolor sit';
+  const headingText = "Lorem ipsum dolor sit";
 
   const fields = [
     {
-      label: 'Vorame',
-      name: 'vorname',
-      value: 'Max',
+      label: "Vorame",
+      name: "vorname",
+      value: "Max",
     },
     {
-      label: 'Nachname',
-      name: 'nachname',
+      label: "Nachname",
+      name: "nachname",
     },
     {
-      label: 'E-Mail',
-      name: 'email',
-      type: 'email',
-      className: 'sm:col-span-2',
-      placeholder: 'meine-tolle-email@meine-domain.de',
+      label: "E-Mail",
+      name: "email",
+      type: "email",
+      className: "sm:col-span-2",
+      placeholder: "meine-tolle-email@meine-domain.de",
     },
     {
-      label: 'Kategorie',
-      name: 'kategorie',
-      element: 'select',
-      className: 'sm:col-span-2',
+      label: "Kategorie",
+      name: "kategorie",
+      element: "select",
+      className: "sm:col-span-2",
       children: [
         <option key="1" value="auftrag">
           Auftrag
@@ -47,11 +47,11 @@ function Page({ data }) {
       ],
     },
     {
-      label: 'Nachricht',
-      name: 'nachricht',
-      element: 'textarea',
+      label: "Nachricht",
+      name: "nachricht",
+      element: "textarea",
       required: false,
-      className: 'sm:col-span-2',
+      className: "sm:col-span-2",
       attrs: {
         rows: 3,
       },

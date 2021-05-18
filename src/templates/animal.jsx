@@ -1,8 +1,8 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import Layout from '../components/Layout';
-import AnimalComponent from '../components/Animal';
+import React from "react";
+import { graphql } from "gatsby";
+import PropTypes from "prop-types";
+import Layout from "../components/Layout";
+import AnimalComponent from "../components/Animal";
 
 function Page({ data }) {
   const animal = data.markdownRemark.frontmatter;
@@ -24,7 +24,7 @@ Page.propTypes = {
 export default Page;
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       id
       html

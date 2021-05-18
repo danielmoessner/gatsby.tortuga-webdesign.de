@@ -14,7 +14,7 @@
     "kill": "kill-port 8000",
     "cms": "npx netlify-cms-proxy-server",
     "update": "npx npm-check-updates -u --timeout 60000 && npm install",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
+    "format": "eslint --fix --ext .js,.jsx src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -59,6 +59,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
+    "sanitize-html": "^2.3.3",
     "tailwindcss": "^2.1.2"
   }
 }

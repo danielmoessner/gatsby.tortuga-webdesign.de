@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ChildrenData from '../types/ChildrenData';
+import React from "react";
+import PropTypes from "prop-types";
+import ChildrenData from "../types/ChildrenData";
 
 function Component({ element, children, color }) {
   const Tag = element;
@@ -11,8 +11,8 @@ function Component({ element, children, color }) {
 }
 
 Component.defaultProps = {
-  element: 'div',
-  color: 'text-gray-700',
+  element: "div",
+  color: "text-gray-700",
 };
 
 Component.propTypes = {

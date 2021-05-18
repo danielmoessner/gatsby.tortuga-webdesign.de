@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ChildrenData from '../types/ChildrenData';
+import React from "react";
+import PropTypes from "prop-types";
+import ChildrenData from "../types/ChildrenData";
 
 function Component({
   name,
@@ -44,15 +44,16 @@ function Component({
 }
 
 Component.defaultProps = {
-  autoComplete: '',
-  type: 'text',
-  element: 'input',
+  autoComplete: "",
+  type: "text",
+  element: "input",
   attrs: {},
-  className: '',
+  className: "",
   required: true,
-  value: '',
+  value: "",
   children: null,
-  placeholder: '',
+
+  placeholder: "",
 };
 
 export const InputProps = {

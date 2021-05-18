@@ -1,7 +1,7 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import PropTypes from 'prop-types';
-import { graphql, useStaticQuery } from 'gatsby';
+import React from "react";
+import { Helmet } from "react-helmet";
+import PropTypes from "prop-types";
+import { graphql, useStaticQuery } from "gatsby";
 
 function SEO({ title, description, image }) {
   const data = useStaticQuery(
@@ -22,7 +22,7 @@ function SEO({ title, description, image }) {
   const favicon = data.settingsYaml.favicon.childImageSharp.resize.src;
 
   return (
-    <Helmet htmlAttributes={{ lang: 'de' }}>
+    <Helmet htmlAttributes={{ lang: "de" }}>
       {/* General tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
@@ -47,7 +47,7 @@ function SEO({ title, description, image }) {
 }
 
 SEO.defaultProps = {
-  image: '',
+  image: "",
 };
 
 SEO.propTypes = {
