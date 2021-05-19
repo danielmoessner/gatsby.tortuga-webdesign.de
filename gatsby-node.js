@@ -29,3 +29,19 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 };
+
+exports.sourceNodes = ({ actions }) => {
+  actions.createTypes(`
+    type PageYamlMeta @infer {
+      title: String,
+      description: String,
+      image: File @fileByRelativePath,
+    }
+
+    type MarkdownRemarkFrontmatterMeta @infer {
+      title: String,
+      description: String,
+      image: File @fileByRelativePath,
+    }
+  `);
+};

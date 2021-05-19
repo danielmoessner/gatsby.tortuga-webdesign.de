@@ -9,6 +9,8 @@ import Pre from "../components/Pre";
 import Heading from "../components/Heading";
 import Button from "../components/Button";
 import DynamicForm from "../components/DynamicForm";
+import Header from "../components/Header";
+import Container from "../components/Container";
 
 function Page({ data }) {
   const page = data.pageYaml;
@@ -60,16 +62,11 @@ function Page({ data }) {
 
   return (
     <Layout>
-      <Seo
-        title={page.meta.title}
-        description={page.meta.description}
-        image={page.meta.image.childImageSharp.resize.src}
-      />
-      <div className="mt-12 mb-24">
-        <Heading element="h1">Styleguide</Heading>
-      </div>
-      <div className="space-y-16">
-        <div className="">
+      <Seo meta={page.meta} />
+      <Header header={page.header} />
+
+      <section className="pb-16 pt-16">
+        <Container layout="sm">
           <Pre element="h2">Typographie</Pre>
           <div className="mt-8 space-y-8">
             <div className="flex items-baseline justify-between">
@@ -95,8 +92,10 @@ function Page({ data }) {
               <div>Pre</div>
             </div>
           </div>
-        </div>
-        <div className="">
+        </Container>
+      </section>
+      <section className="pb-16 pt-16">
+        <Container layout="sm">
           <Pre element="h2">Buttons</Pre>
           <div className="mt-8 space-y-8">
             <div className="flex items-baseline justify-between">
@@ -138,14 +137,16 @@ function Page({ data }) {
               <div>(Primary, Size)</div>
             </div>
           </div>
-        </div>
-        <div className="">
+        </Container>
+      </section>
+      <section className="pb-32 pt-16">
+        <Container layout="sm">
           <Pre element="h2">Formulare</Pre>
           <div className="mt-8 space-y-8">
             <DynamicForm fields={fields} />
           </div>
-        </div>
-      </div>
+        </Container>
+      </section>
     </Layout>
   );
 }
@@ -161,6 +162,7 @@ export const query = graphql`
   {
     pageYaml(slug: { eq: "styleguide" }) {
       ...meta
+      ...header
     }
   }
 `;

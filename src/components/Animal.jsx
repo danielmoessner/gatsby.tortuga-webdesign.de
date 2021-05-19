@@ -1,15 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Hero from "./Hero";
-import Seo from "./Seo";
 import GatsbyImageData from "../types/GatsbyImageData";
 
 function Animal({ animal, image, body, preview }) {
   return (
     <div>
-      {!preview ? (
-        <Seo title={animal.title} description={animal.excerpt} image={image.src} />
-      ) : null}
       <div className="mb-6">
         <Hero image={image} preview={preview} alt={animal.title} />
       </div>

@@ -15,11 +15,7 @@ function Page({ data }) {
 
   return (
     <Layout>
-      <Seo
-        title={page.meta.title}
-        description={page.meta.description}
-        image={page.meta.image.childImageSharp.resize.src}
-      />
+      <Seo meta={page.meta} />
       <Header header={page.header} />
       <section>
         <Container layout="sm">

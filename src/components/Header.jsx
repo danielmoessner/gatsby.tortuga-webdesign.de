@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes, { string } from "prop-types";
+import PropTypes from "prop-types";
 // import { Link } from 'gatsby';
 // import { Transition } from '@headlessui/react';
 import { graphql } from "gatsby";
@@ -28,14 +28,14 @@ Component.defaultProps = {};
 
 Component.propTypes = {
   header: PropTypes.shape({
-    title: string,
-    text: string,
+    title: PropTypes.string,
+    text: PropTypes.string,
   }).isRequired,
 };
 
 export default Component;
 
-export const metaFragment = graphql`
+export const headerFragment = graphql`
   fragment header on PageYaml {
     header {
       title

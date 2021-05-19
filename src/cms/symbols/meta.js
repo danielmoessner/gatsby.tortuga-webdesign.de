@@ -5,6 +5,6 @@ export default {
   fields: [
     { label: "Titel", name: "title", widget: "string" },
     { label: "Beschreibung", name: "description", widget: "text" },
-    { label: "Bild", name: "image", widget: "image" },
+    { label: "Bild", name: "image", widget: "image", required: false },
   ],
 };
