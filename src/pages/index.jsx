@@ -19,7 +19,7 @@ function Page({ data }) {
       <Header header={page.header} />
       <section>
         <Container layout="sm">
-          <div className="pt-16 pb-20">
+          <div className="pt-8 pb-20 sm:pt-4 lg:pt-6">
             <div className="">
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:gap-6">
                 {animals.map((animal) => (

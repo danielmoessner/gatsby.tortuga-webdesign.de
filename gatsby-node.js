@@ -6,7 +6,15 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create the animal pages
   const result = await graphql(`
     query {
-      allMarkdownRemark(filter: { frontmatter: { collection: { eq: "animal" } } }) {
+      animals: allMarkdownRemark(filter: { frontmatter: { collection: { eq: "animal" } } }) {
+        nodes {
+          frontmatter {
+            slug
+          }
+          id
+        }
+      }
+      legal: allMarkdownRemark(filter: { frontmatter: { collection: { eq: "legal" } } }) {
         nodes {
           frontmatter {
             slug
@@ -16,10 +24,22 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  result.data.allMarkdownRemark.nodes.forEach((node) => {
+  result.data.animals.nodes.forEach((node) => {
     createPage({
       path: `wildtiere/${node.frontmatter.slug}/`,
       component: path.resolve("./src/templates/animal.jsx"),
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.frontmatter.slug,
+        id: node.id,
+      },
+    });
+  });
+  result.data.legal.nodes.forEach((node) => {
+    createPage({
+      path: `rechtliches/${node.frontmatter.slug}/`,
+      component: path.resolve("./src/templates/legal.jsx"),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
