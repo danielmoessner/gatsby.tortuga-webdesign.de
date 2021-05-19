@@ -1,0 +1,13 @@
+collection: setting
+slug: navigation
+links:
+  - type: links
+    text: Große Tiere
+    links:
+      - text: Wolf
+        url: /wildtiere/wolf/
+      - text: Hirsch
+        url: /wildtiere/hirsch/
+  - type: link
+    text: Styleguide
+    url: /styleguide/

@@ -7,7 +7,7 @@ export default {
   name: "global",
   preview: false,
   fields: [
-    collection("page"),
+    collection("setting"),
     slug("global"),
     {
       label: "Titel in der Navigation",

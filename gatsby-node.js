@@ -33,15 +33,32 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.sourceNodes = ({ actions }) => {
   actions.createTypes(`
     type PageYamlMeta @infer {
-      title: String,
-      description: String,
-      image: File @fileByRelativePath,
+      title: String
+      description: String
+      image: File @fileByRelativePath
     }
 
     type MarkdownRemarkFrontmatterMeta @infer {
-      title: String,
-      description: String,
-      image: File @fileByRelativePath,
+      title: String
+      description: String
+      image: File @fileByRelativePath
     }
+
+    type BaseLink {
+      text: String
+      url: String 
+    }
+
+    type Link {
+      text: String
+      url: String
+      type: String
+      links: [BaseLink]
+    }
+
+    type SettingYaml implements Node @infer {
+      links: [Link]
+    }
+
   `);
 };

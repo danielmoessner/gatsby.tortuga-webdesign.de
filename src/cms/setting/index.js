@@ -1,4 +1,5 @@
 import global from "./global";
+import navigation from "./navigation";
 
 export default {
   name: "setting",
@@ -8,5 +9,5 @@ export default {
   editor: {
     preview: false,
   },
-  files: [global],
+  files: [global, navigation],
 };
