@@ -7,7 +7,7 @@ export default {
   editor: {
     preview: true,
   },
-  folder: "content/animals",
+  folder: "content/animal",
   slug: "{{fields.slug}}",
   create: true,
   preview_path: "wildtiere/{{fields.slug}}",
