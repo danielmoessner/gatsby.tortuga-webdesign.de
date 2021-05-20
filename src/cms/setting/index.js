@@ -1,3 +1,4 @@
+import footer from "./footer";
 import global from "./global";
 import navigation from "./navigation";
 
@@ -9,5 +10,5 @@ export default {
   editor: {
     preview: false,
   },
-  files: [global, navigation],
+  files: [global, navigation, footer],
 };

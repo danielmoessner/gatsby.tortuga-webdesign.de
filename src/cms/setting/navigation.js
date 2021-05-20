@@ -52,6 +52,11 @@ export default {
     collection("setting"),
     slug("navigation"),
     {
+      label: "Titel",
+      name: "title",
+      widget: "string",
+    },
+    {
       label: "Links",
       name: "links",
       widget: "list",

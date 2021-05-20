@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "gatsby";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
@@ -10,6 +10,21 @@ function classNames(...classes) {
 }
 
 function Component({ link }) {
+  const [isActive, setIsActive] = useState(false);
+
+  const setIsActiveTrue = () => {
+    if (!isActive) setIsActive(true);
+  };
+
+  useEffect(() => {
+    // eslint-disable-next-line no-undef
+    const path = window.location.pathname;
+    if (link.links)
+      link.links.forEach((item) => {
+        if (item.url === path) setIsActiveTrue();
+      });
+  }, []);
+
   return (
     <>
       <Popover className="relative hidden md:block">
@@ -17,8 +32,9 @@ function Component({ link }) {
           <>
             <Popover.Button
               className={classNames(
-                open ? "text-gray-900" : "text-gray-500",
-                "group pl-3 pr-2 py-1 hover:bg-gray-100 bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-gray-200"
+                isActive ? "bg-gray-50" : "",
+                open ? "text-gray-900 bg-gray-100" : "text-gray-600",
+                "group pl-3 pr-2 py-1 hover:bg-gray-100 rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-gray-200"
               )}
             >
               <span>{link.text}</span>
@@ -52,9 +68,12 @@ function Component({ link }) {
                         <Link
                           key={item.url}
                           to={item.url}
-                          className="-m-3 p-3 block rounded-md hover:bg-gray-50 transition ease-in-out duration-150"
+                          className="-m-3 p-3 block rounded-md hover:bg-gray-100 transition ease-in-out duration-150"
+                          activeClassName="bg-gray-50"
                         >
-                          <p className="text-base font-medium text-gray-900">{item.text}</p>
+                          <p className="text-base font-medium text-gray-600 hover:text-gray-900">
+                            {item.text}
+                          </p>
                         </Link>
                       ))}
                   </div>
@@ -76,8 +95,6 @@ function Component({ link }) {
     </>
   );
 }
-
-Component.defaultProps = {};
 
 Component.propTypes = {
   link: PropTypes.shape({

@@ -9,13 +9,7 @@ export default {
   fields: [
     collection("setting"),
     slug("global"),
-    {
-      label: "Titel in der Navigation",
-      name: "navigationTitle",
-      widget: "string",
-      default: "Wildtiere",
-    },
-    { label: "URL der Seite", name: "siteUrl", widget: "string", required: false },
     { label: "Favicon", name: "favicon", widget: "image" },
+    { label: "Tortuga Webdesign Logo", name: "tortugaWebdesignLogo", widget: "text" },
   ],
 };

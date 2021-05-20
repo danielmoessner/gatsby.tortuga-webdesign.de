@@ -8,7 +8,8 @@ function Component({ link }) {
     <>
       <Link
         to={link.url}
-        className="px-3 py-1 hover:bg-gray-100 rounded-md hidden text-base font-medium text-gray-500 hover:text-gray-900 md:block"
+        activeClassName="bg-gray-50"
+        className="px-3 py-1 hover:bg-gray-100 rounded-md hidden text-base font-medium text-gray-600 hover:text-gray-900 md:block focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-gray-200"
       >
         {link.text}
       </Link>

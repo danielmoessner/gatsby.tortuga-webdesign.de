@@ -1,0 +1,34 @@
+collection: setting
+slug: footer
+copyright: © Tortuga Webdesign
+text: Diese Seite ist eine beispielhafte Seite und wird als Starter für
+  Webseitenprojekte benutzt.
+columns:
+  - title: Navigation
+    content:
+      - type: link
+        text: Startseite
+        url: /
+      - type: link
+        text: Styleguide
+        url: /styleguide/
+    class: col-span-6 md:col-span-3
+  - title: Kontakt
+    content:
+      - type: externalLink
+        text: kontakt@tortuga-webdesign.de
+        url: mailto:kontakt@tortuga-webdesign.de
+      - type: text
+        text: |-
+          Albert-Schweitzer-Str. 17b
+          85375 Neufahrn b. Freising
+    class: col-span-6 md:col-span-5
+  - title: Rechtliches
+    content:
+      - type: link
+        text: Impressum
+        url: /rechtliches/impressum/
+      - type: link
+        text: Datenschutz
+        url: /rechtliches/datenschutz/
+    class: col-span-6 md:col-span-3 md:col-start-10 text-right

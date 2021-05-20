@@ -23,7 +23,7 @@ function Page({ data }) {
     <Layout>
       <Seo meta={meta} />
       <Header header={header} />
-      <section className="pt-5">
+      <section className="pt-5 pb-20">
         <Container layout="sm">
           <article
             className="prose"

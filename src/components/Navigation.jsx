@@ -10,6 +10,7 @@ function Component() {
   const data = useStaticQuery(graphql`
     {
       navigation: settingYaml(slug: { eq: "navigation" }) {
+        title
         links {
           text
           url
@@ -20,12 +21,9 @@ function Component() {
           }
         }
       }
-      global: settingYaml(slug: { eq: "global" }) {
-        navigationTitle
-      }
     }
   `);
-  const { navigation, global } = data;
+  const { navigation } = data;
 
   return (
     <nav>
@@ -38,7 +36,7 @@ function Component() {
                   <div className="flex justify-start lg:w-0 lg:flex-1">
                     <Link to="/">
                       <h1 className="text-3xl font-bold tracking-tight leading-tight text-gray-700 hover:text-gray-800 transition ease-in-out duration-150">
-                        {global.navigationTitle}
+                        {navigation.title}
                       </h1>
                     </Link>
                   </div>
@@ -80,7 +78,7 @@ function Component() {
                         <div className="flex items-center justify-between border-b pb-2">
                           <Link to="/">
                             <h1 className="text-3xl font-bold tracking-tight leading-tight text-gray-700 hover:text-gray-800 transition ease-in-out duration-150">
-                              {global.navigationTitle}
+                              {navigation.title}
                             </h1>
                           </Link>
                           <div className="">
