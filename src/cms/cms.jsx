@@ -18,6 +18,7 @@ CMS.registerLocale("de", de);
 // See https://www.netlifycms.org/docs/beta-features/#manual-initialization
 init({
   config: {
+    publish_mode: "editorial_workflow",
     // See https://www.netlifycms.org/docs/configuration-options/#backend
     backend: {
       name: "git-gateway",
