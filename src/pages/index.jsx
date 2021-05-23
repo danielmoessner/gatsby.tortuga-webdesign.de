@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 import AnimalCard from "../components/AnimalCard";
 import Seo from "../components/Seo";
 // import Animate from '../components/Animate';
-import Animate from "../components/AnimateNew2";
+import Animate from "../components/Animate";
 import Container from "../components/Container";
 import Header from "../components/Header";
 
@@ -22,8 +22,8 @@ function Page({ data }) {
           <div className="pt-8 pb-20 sm:pt-4 lg:pt-6">
             <div className="">
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:gap-6">
-                {animals.map((animal) => (
-                  <Animate key={animal.slug}>
+                {animals.map((animal, index) => (
+                  <Animate key={animal.slug} delay={index % 3}>
                     <AnimalCard
                       animal={animal}
                       image={animal.image.childImageSharp.gatsbyImageData}
