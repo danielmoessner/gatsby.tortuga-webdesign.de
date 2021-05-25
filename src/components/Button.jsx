@@ -4,16 +4,28 @@ import { Link } from "gatsby";
 import ChildrenData from "../types/ChildrenData";
 
 function Component({
+  // element
   element,
+  // attrs
   href,
   to,
   target,
-  children,
   type,
-  importance,
-  ringOffsetClass,
+  // style
+  secondary,
+  // size
   size,
-  colors,
+  // color
+  color,
+  primaryColor,
+  secondaryColor,
+  // ring
+  ring,
+  ringOffset,
+  // className
+  className,
+  // other
+  children,
 }) {
   const Tag = element === "Link" ? Link : element;
 
@@ -33,22 +45,20 @@ function Component({
     };
   }
 
-  let classes =
-    "inline-flex items-center border border-transparent font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2";
-  let colorClasses = ringOffsetClass;
-  if (importance === "primary") {
-    classes = `${classes} shadow-sm`;
-    colorClasses = `${colorClasses} shadow-sm text-white bg-gray-600 hover:bg-gray-700 focus:ring-gray-500`;
-  } else if (importance === "secondary") {
-    colorClasses = `${colorClasses} text-gray-700 bg-gray-100 hover:bg-gray-200 focus:ring-gray-500`;
+  let bColor = "";
+  if (secondary) {
+    bColor = color || secondaryColor;
+  } else {
+    bColor = color || primaryColor;
   }
-  colorClasses = colors || colorClasses;
 
-  classes = `${classes} ${size} ${colorClasses}`;
+  const bClassName =
+    className ||
+    `inline-flex items-center border-2 border-transparent font-medium rounded-md shadow-sm ${ring} ${ringOffset} ${size} ${bColor}`;
 
   return (
     <Tag
-      className={classes}
+      className={bClassName}
       // eslint-disable-next-line
       {...attrs}
     >
@@ -58,28 +68,52 @@ function Component({
 }
 
 Component.defaultProps = {
+  // element
   element: "Link",
+  // attrs
   to: "/",
   href: "#",
   type: "submit",
   target: "_self",
-  importance: "primary",
-  ringOffsetClass: "",
+  // style
+  secondary: false,
+  // size
   size: "px-4 py-2 text-sm",
-  colors: "",
+  // color
+  color: null,
+  primaryColor: "text-white bg-gray-600 hover:bg-gray-700 focus:ring-gray-500",
+  secondaryColor: "text-gray-700 bg-gray-100 hover:bg-gray-200 focus:ring-gray-500",
+  // ring
+  ring: "focus:outline-none focus:ring-2 focus:ring-offset-2",
+  ringOffset: "ring-offset-pink-500",
+  // className
+  className: null,
 };
 
 Component.propTypes = {
+  // element
   element: PropTypes.oneOf(["a", "button", "Link"]),
+  // attrs
   href: PropTypes.string,
   to: PropTypes.string,
   target: PropTypes.string,
   type: PropTypes.string,
-  children: ChildrenData.isRequired,
-  importance: PropTypes.oneOf(["primary", "secondary"]),
-  ringOffsetClass: PropTypes.string,
+  // style
+  // style: PropTypes.oneOf(["primary", "secondary"]),
+  secondary: PropTypes.bool,
+  // size
   size: PropTypes.string,
-  colors: PropTypes.string,
+  // color
+  color: PropTypes.string,
+  primaryColor: PropTypes.string,
+  secondaryColor: PropTypes.string,
+  // ring
+  ring: PropTypes.string,
+  ringOffset: PropTypes.string,
+  // classname
+  className: PropTypes.string,
+  // other
+  children: ChildrenData.isRequired,
 };
 
 export default Component;

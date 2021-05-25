@@ -99,23 +99,26 @@ function Page({ data }) {
           <Pre element="h2">Buttons</Pre>
           <div className="mt-8 space-y-8">
             <div className="flex items-baseline justify-between">
-              <Button to="/styleguide/">Button</Button>
+              <Button ringOffset="ring-offset-white" to="/styleguide/">
+                Button
+              </Button>
               <div>(Primary, Link-Tag)</div>
             </div>
             <div className="flex items-baseline justify-between">
-              <Button to="/styleguide/" importance="secondary">
+              <Button ringOffset="ring-offset-white" to="/styleguide/" secondary>
                 Button
               </Button>
               <div>(Secondary, Link-Tag)</div>
             </div>
             <div className="flex items-baseline justify-between">
-              <Button href="/styleguide/" element="a">
+              <Button ringOffset="ring-offset-white" href="/styleguide/" element="a">
                 Button
               </Button>
               <div>(Primary, A-Tag)</div>
             </div>
             <div className="flex items-baseline justify-between">
               <Button
+                ringOffset="ring-offset-white"
                 type="submit"
                 element="button"
                 colors="bg-gray-200 hover:bg-gray-800 ring-offset-white transition focus:ring-gray-900 text-black hover:text-white"
@@ -125,13 +128,17 @@ function Page({ data }) {
               <div>(Primary, Button-Tag, Colors)</div>
             </div>
             <div className="flex items-baseline justify-between">
-              <Button to="/styleguide/" ringOffsetClass="ring-offset-black">
+              <Button
+                ringOffset="ring-offset-white"
+                to="/styleguide/"
+                ringOffsetClass="ring-offset-black"
+              >
                 Button
               </Button>
               <div>(Primary, Link-Tag, RingOffsetBlack)</div>
             </div>
             <div className="flex items-baseline justify-between">
-              <Button to="/styleguide/" size="px-6 py-3 text-base">
+              <Button ringOffset="ring-offset-white" to="/styleguide/" size="px-6 py-3 text-base">
                 Button Big
               </Button>
               <div>(Primary, Size)</div>
