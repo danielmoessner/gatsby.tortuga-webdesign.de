@@ -102,8 +102,6 @@ exports.sourceNodes = ({ actions }) => {
       columns: [Column]
     }
 
-    
-
     type SettingYamlColumns @infer {
       title: String,
       content: [FooterItem]
